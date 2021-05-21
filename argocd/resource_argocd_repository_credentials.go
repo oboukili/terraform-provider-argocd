@@ -2,28 +2,40 @@ package argocd
 
 import (
 	"context"
+	"fmt"
+	"strings"
+
 	"github.com/argoproj/argo-cd/pkg/apiclient/repocreds"
 	application "github.com/argoproj/argo-cd/pkg/apis/application/v1alpha1"
-	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
-	"strings"
+	"github.com/hashicorp/terraform-plugin-sdk/v2/diag"
+	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 )
 
 func resourceArgoCDRepositoryCredentials() *schema.Resource {
 	return &schema.Resource{
-		Create: resourceArgoCDRepositoryCredentialsCreate,
-		Read:   resourceArgoCDRepositoryCredentialsRead,
-		Update: resourceArgoCDRepositoryCredentialsUpdate,
-		Delete: resourceArgoCDRepositoryCredentialsDelete,
+		CreateContext: resourceArgoCDRepositoryCredentialsCreate,
+		ReadContext:   resourceArgoCDRepositoryCredentialsRead,
+		UpdateContext: resourceArgoCDRepositoryCredentialsUpdate,
+		DeleteContext: resourceArgoCDRepositoryCredentialsDelete,
 		// TODO: add importer acceptance tests
 		Importer: &schema.ResourceImporter{
-			State: schema.ImportStatePassthrough,
+			StateContext: schema.ImportStatePassthroughContext,
 		},
 		Schema: repositoryCredentialsSchema(),
 	}
 }
 
-func resourceArgoCDRepositoryCredentialsCreate(d *schema.ResourceData, meta interface{}) error {
-	server := meta.(ServerInterface)
+func resourceArgoCDRepositoryCredentialsCreate(ctx context.Context, d *schema.ResourceData, meta interface{}) diag.Diagnostics {
+	server := meta.(*ServerInterface)
+	if err := server.initClients(); err != nil {
+		return []diag.Diagnostic{
+			diag.Diagnostic{
+				Severity: diag.Error,
+				Summary:  fmt.Sprintf("Failed to init clients"),
+				Detail:   err.Error(),
+			},
+		}
+	}
 	c := *server.RepoCredsClient
 	repoCreds := expandRepositoryCredentials(d)
 
@@ -38,14 +50,29 @@ func resourceArgoCDRepositoryCredentialsCreate(d *schema.ResourceData, meta inte
 	tokenMutexConfiguration.Unlock()
 
 	if err != nil {
-		return err
+		return []diag.Diagnostic{
+			{
+				Severity: diag.Error,
+				Summary:  fmt.Sprintf("credentials for repository %s could not be created", repoCreds.URL),
+				Detail:   err.Error(),
+			},
+		}
 	}
 	d.SetId(rc.URL)
-	return resourceArgoCDRepositoryCredentialsRead(d, meta)
+	return resourceArgoCDRepositoryCredentialsRead(ctx, d, meta)
 }
 
-func resourceArgoCDRepositoryCredentialsRead(d *schema.ResourceData, meta interface{}) error {
-	server := meta.(ServerInterface)
+func resourceArgoCDRepositoryCredentialsRead(ctx context.Context, d *schema.ResourceData, meta interface{}) diag.Diagnostics {
+	server := meta.(*ServerInterface)
+	if err := server.initClients(); err != nil {
+		return []diag.Diagnostic{
+			diag.Diagnostic{
+				Severity: diag.Error,
+				Summary:  fmt.Sprintf("Failed to init clients"),
+				Detail:   err.Error(),
+			},
+		}
+	}
 	c := *server.RepoCredsClient
 	rc := application.RepoCreds{}
 
@@ -57,7 +84,13 @@ func resourceArgoCDRepositoryCredentialsRead(d *schema.ResourceData, meta interf
 
 	if err != nil {
 		// TODO: check for NotFound condition?
-		return err
+		return []diag.Diagnostic{
+			{
+				Severity: diag.Error,
+				Summary:  fmt.Sprintf("credentials for repository %s could not be listed", d.Id()),
+				Detail:   err.Error(),
+			},
+		}
 	}
 	if rcl == nil {
 		// Repository credentials have already been deleted in an out-of-band fashion
@@ -78,8 +111,17 @@ func resourceArgoCDRepositoryCredentialsRead(d *schema.ResourceData, meta interf
 	return flattenRepositoryCredentials(rc, d)
 }
 
-func resourceArgoCDRepositoryCredentialsUpdate(d *schema.ResourceData, meta interface{}) error {
-	server := meta.(ServerInterface)
+func resourceArgoCDRepositoryCredentialsUpdate(ctx context.Context, d *schema.ResourceData, meta interface{}) diag.Diagnostics {
+	server := meta.(*ServerInterface)
+	if err := server.initClients(); err != nil {
+		return []diag.Diagnostic{
+			diag.Diagnostic{
+				Severity: diag.Error,
+				Summary:  fmt.Sprintf("Failed to init clients"),
+				Detail:   err.Error(),
+			},
+		}
+	}
 	c := *server.RepoCredsClient
 	repoCreds := expandRepositoryCredentials(d)
 
@@ -92,21 +134,35 @@ func resourceArgoCDRepositoryCredentialsUpdate(d *schema.ResourceData, meta inte
 	tokenMutexConfiguration.Unlock()
 
 	if err != nil {
-		switch strings.Contains(err.Error(), "NotFound") {
-		// Repository credentials have already been deleted in an out-of-band fashion
-		case true:
+		if strings.Contains(err.Error(), "NotFound") {
+			// Repository credentials have already been deleted in an out-of-band fashion
 			d.SetId("")
 			return nil
-		default:
-			return err
+		} else {
+			return []diag.Diagnostic{
+				{
+					Severity: diag.Error,
+					Summary:  fmt.Sprintf("credentials for repository %s could not be updated", repoCreds.URL),
+					Detail:   err.Error(),
+				},
+			}
 		}
 	}
 	d.SetId(r.URL)
-	return resourceArgoCDRepositoryCredentialsRead(d, meta)
+	return resourceArgoCDRepositoryCredentialsRead(ctx, d, meta)
 }
 
-func resourceArgoCDRepositoryCredentialsDelete(d *schema.ResourceData, meta interface{}) error {
-	server := meta.(ServerInterface)
+func resourceArgoCDRepositoryCredentialsDelete(ctx context.Context, d *schema.ResourceData, meta interface{}) diag.Diagnostics {
+	server := meta.(*ServerInterface)
+	if err := server.initClients(); err != nil {
+		return []diag.Diagnostic{
+			diag.Diagnostic{
+				Severity: diag.Error,
+				Summary:  fmt.Sprintf("Failed to init clients"),
+				Detail:   err.Error(),
+			},
+		}
+	}
 	c := *server.RepoCredsClient
 
 	tokenMutexConfiguration.Lock()
@@ -117,13 +173,18 @@ func resourceArgoCDRepositoryCredentialsDelete(d *schema.ResourceData, meta inte
 	tokenMutexConfiguration.Unlock()
 
 	if err != nil {
-		switch strings.Contains(err.Error(), "NotFound") {
-		// Repository credentials have already been deleted in an out-of-band fashion
-		case true:
+		if strings.Contains(err.Error(), "NotFound") {
+			// Repository credentials have already been deleted in an out-of-band fashion
 			d.SetId("")
 			return nil
-		default:
-			return err
+		} else {
+			return []diag.Diagnostic{
+				{
+					Severity: diag.Error,
+					Summary:  fmt.Sprintf("credentials for repository %s could not be deleted", d.Id()),
+					Detail:   err.Error(),
+				},
+			}
 		}
 	}
 	d.SetId("")

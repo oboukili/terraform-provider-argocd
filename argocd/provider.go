@@ -2,20 +2,12 @@ package argocd
 
 import (
 	"context"
-	"fmt"
-	"github.com/Masterminds/semver"
+	"sync"
+
 	"github.com/argoproj/argo-cd/pkg/apiclient"
-	"github.com/argoproj/argo-cd/pkg/apiclient/application"
-	"github.com/argoproj/argo-cd/pkg/apiclient/cluster"
-	"github.com/argoproj/argo-cd/pkg/apiclient/project"
-	"github.com/argoproj/argo-cd/pkg/apiclient/repocreds"
-	"github.com/argoproj/argo-cd/pkg/apiclient/repository"
 	"github.com/argoproj/argo-cd/pkg/apiclient/session"
 	"github.com/argoproj/argo-cd/util/io"
-	"github.com/golang/protobuf/ptypes/empty"
-	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
-	"github.com/hashicorp/terraform-plugin-sdk/terraform"
-	"sync"
+	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 )
 
 var apiClientConnOpts apiclient.ClientOptions
@@ -26,7 +18,7 @@ var tokenMutexConfiguration = &sync.RWMutex{}
 // Used to handle concurrent access to each ArgoCD project
 var tokenMutexProjectMap = make(map[string]*sync.RWMutex, 0)
 
-func Provider() terraform.ResourceProvider {
+func Provider() *schema.Provider {
 	return &schema.Provider{
 		Schema: map[string]*schema.Schema{
 			"server_addr": {
@@ -122,78 +114,10 @@ func Provider() terraform.ResourceProvider {
 			"argocd_repository_credentials": resourceArgoCDRepositoryCredentials(),
 		},
 		ConfigureFunc: func(d *schema.ResourceData) (interface{}, error) {
-			apiClient, err := initApiClient(d)
-			if err != nil {
-				return nil, err
-			}
-			_, clusterClient, err := apiClient.NewClusterClient()
-			if err != nil {
-				return nil, err
-			}
-			_, applicationClient, err := apiClient.NewApplicationClient()
-			if err != nil {
-				return nil, err
-			}
-			_, projectClient, err := apiClient.NewProjectClient()
-			if err != nil {
-				return nil, err
-			}
-			_, repositoryClient, err := apiClient.NewRepoClient()
-			if err != nil {
-				return nil, err
-			}
-
-			_, repoCredsClient, err := apiClient.NewRepoCredsClient()
-			if err != nil {
-				return nil, err
-			}
-			return initServerInterface(
-				apiClient,
-				applicationClient,
-				clusterClient,
-				projectClient,
-				repositoryClient,
-				repoCredsClient,
-			)
+			server := ServerInterface{ProviderData: d}
+			return &server, nil
 		},
 	}
-}
-
-func initServerInterface(
-	apiClient apiclient.Client,
-	applicationClient application.ApplicationServiceClient,
-	clusterClient cluster.ClusterServiceClient,
-	projectClient project.ProjectServiceClient,
-	repositoryClient repository.RepositoryServiceClient,
-	repoCredsClient repocreds.RepoCredsServiceClient,
-) (interface{}, error) {
-	acCloser, versionClient, err := apiClient.NewVersionClient()
-	if err != nil {
-		return nil, err
-	}
-	defer io.Close(acCloser)
-
-	serverVersionMessage, err := versionClient.Version(context.Background(), &empty.Empty{})
-	if err != nil {
-		return nil, err
-	}
-	if serverVersionMessage == nil {
-		return nil, fmt.Errorf("could not get server version information")
-	}
-	serverVersion, err := semver.NewVersion(serverVersionMessage.Version)
-	if err != nil {
-		return nil, fmt.Errorf("could not parse server semantic version: %s", serverVersionMessage.Version)
-	}
-
-	return ServerInterface{
-		&apiClient,
-		&applicationClient,
-		&clusterClient,
-		&projectClient,
-		&repositoryClient,
-		&repoCredsClient,
-		serverVersion,
-		serverVersionMessage}, err
 }
 
 func initApiClient(d *schema.ResourceData) (
@@ -205,6 +129,7 @@ func initApiClient(d *schema.ResourceData) (
 	if v, ok := d.GetOk("server_addr"); ok {
 		opts.ServerAddr = v.(string)
 	}
+
 	if v, ok := d.GetOk("plain_text"); ok {
 		opts.PlainText = v.(bool)
 	}

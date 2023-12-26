@@ -235,7 +235,7 @@ func expandApplicationSourceKustomize(in []interface{}) *application.Application
 	}
 
 	if patches, ok := a["patches"]; ok {
-		for _, v := range  patches.([]interface{}) {
+		for _, v := range patches.([]interface{}) {
 			patchMap := v.(map[string]interface{})
 			kustomizePatch := application.KustomizePatch{}
 

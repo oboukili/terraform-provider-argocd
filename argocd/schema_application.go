@@ -172,7 +172,7 @@ func applicationSpecSchemaV0() *schema.Schema {
 													"patch": {
 														Type:     schema.TypeString,
 														Optional: true,
-														Elem:         &schema.Schema{Type: schema.TypeString},
+														Elem:     &schema.Schema{Type: schema.TypeString},
 													},
 												},
 											},
@@ -581,7 +581,7 @@ func applicationSpecSchemaV1() *schema.Schema {
 													"patch": {
 														Type:     schema.TypeString,
 														Optional: true,
-														Elem:         &schema.Schema{Type: schema.TypeString},
+														Elem:     &schema.Schema{Type: schema.TypeString},
 													},
 												},
 											},
@@ -1042,7 +1042,7 @@ func applicationSpecSchemaV2() *schema.Schema {
 													"patch": {
 														Type:     schema.TypeString,
 														Optional: true,
-														Elem:         &schema.Schema{Type: schema.TypeString},
+														Elem:     &schema.Schema{Type: schema.TypeString},
 													},
 												},
 											},
@@ -1547,7 +1547,7 @@ func applicationSpecSchemaV4(allOptional bool) *schema.Schema {
 													"patch": {
 														Type:     schema.TypeString,
 														Optional: true,
-														Elem:         &schema.Schema{Type: schema.TypeString},
+														Elem:     &schema.Schema{Type: schema.TypeString},
 													},
 												},
 											},

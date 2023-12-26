@@ -1249,17 +1249,17 @@ resource "argocd_application" "kustomize" {
 		  "this.is.a.common" = "anno-tation"
 		  "another.io/one"   = "false"
 	    	}
-	    	// patches {
-		// 	target {
-		// 		kind = "Deployment"
-		// 		name = "the-deployment"
-		// 	}
-		// 	patch = <<-EOT
-		// 		- op: replace
-		// 		path: /spec/template/spec/containers/0/ports/0/containerPort
-		// 		value: 443
-		// 	EOT
-        	// }
+	    	patches {
+			target {
+				kind = "Deployment"
+				name = "the-deployment"
+			}
+			patch = <<-EOT
+				- op: replace
+				path: /spec/template/spec/containers/0/ports/0/containerPort
+				value: 443
+			EOT
+        	}
       }
     }
 

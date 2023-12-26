@@ -809,7 +809,7 @@ func flattenApplicationSourceKustomize(as []*application.ApplicationSourceKustom
 		}
 	}
 
-	return
+	return result
 }
 
 func flattenApplicationSourceHelm(as []*application.ApplicationSourceHelm) (result []map[string]interface{}) {

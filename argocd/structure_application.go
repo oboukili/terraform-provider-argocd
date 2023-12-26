@@ -780,7 +780,23 @@ func flattenApplicationSourceKustomize(as []*application.ApplicationSourceKustom
 				images = append(images, string(i))
 			}
 
+			var patches []map[string]interface{}
+			for _, p := range a.Patches {
+				target := make(map[string]interface{})
+				if p.Target != nil {
+					target = map[string]interface{}{
+						"kind": p.Target.KustomizeResId.KustomizeGvk.Kind,
+						"name": p.Target.KustomizeResId.Name,
+					}
+				}
+				patches = append(patches, map[string]interface{}{
+					"patch":  p.Patch,
+					"target": []map[string]interface{}{target},
+				})
+			}
+
 			result = append(result, map[string]interface{}{
+				"patches":            patches,
 				"common_annotations": a.CommonAnnotations,
 				"common_labels":      a.CommonLabels,
 				"images":             images,

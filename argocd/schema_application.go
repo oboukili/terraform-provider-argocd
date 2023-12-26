@@ -148,6 +148,35 @@ func applicationSpecSchemaV0() *schema.Schema {
 											Elem:         &schema.Schema{Type: schema.TypeString},
 											ValidateFunc: validateMetadataAnnotations,
 										},
+										"patches": {
+											Type:     schema.TypeList,
+											Optional: true,
+											Elem: &schema.Resource{
+												Schema: map[string]*schema.Schema{
+													"target": {
+														Type:     schema.TypeSet,
+														Required: true,
+														Elem: &schema.Resource{
+															Schema: map[string]*schema.Schema{
+																"kind": {
+																	Type:     schema.TypeString,
+																	Optional: true,
+																},
+																"name": {
+																	Type:     schema.TypeString,
+																	Optional: true,
+																},
+															},
+														},
+													},
+													"patch": {
+														Type:     schema.TypeString,
+														Optional: true,
+														Elem:         &schema.Schema{Type: schema.TypeString},
+													},
+												},
+											},
+										},
 									},
 								},
 							},
@@ -527,6 +556,35 @@ func applicationSpecSchemaV1() *schema.Schema {
 											Optional:     true,
 											Elem:         &schema.Schema{Type: schema.TypeString},
 											ValidateFunc: validateMetadataAnnotations,
+										},
+										"patches": {
+											Type:     schema.TypeList,
+											Optional: true,
+											Elem: &schema.Resource{
+												Schema: map[string]*schema.Schema{
+													"target": {
+														Type:     schema.TypeSet,
+														Required: true,
+														Elem: &schema.Resource{
+															Schema: map[string]*schema.Schema{
+																"kind": {
+																	Type:     schema.TypeString,
+																	Optional: true,
+																},
+																"name": {
+																	Type:     schema.TypeString,
+																	Optional: true,
+																},
+															},
+														},
+													},
+													"patch": {
+														Type:     schema.TypeString,
+														Optional: true,
+														Elem:         &schema.Schema{Type: schema.TypeString},
+													},
+												},
+											},
 										},
 									},
 								},
@@ -959,6 +1017,35 @@ func applicationSpecSchemaV2() *schema.Schema {
 											Optional:     true,
 											Elem:         &schema.Schema{Type: schema.TypeString},
 											ValidateFunc: validateMetadataAnnotations,
+										},
+										"patches": {
+											Type:     schema.TypeList,
+											Optional: true,
+											Elem: &schema.Resource{
+												Schema: map[string]*schema.Schema{
+													"target": {
+														Type:     schema.TypeSet,
+														Required: true,
+														Elem: &schema.Resource{
+															Schema: map[string]*schema.Schema{
+																"kind": {
+																	Type:     schema.TypeString,
+																	Optional: true,
+																},
+																"name": {
+																	Type:     schema.TypeString,
+																	Optional: true,
+																},
+															},
+														},
+													},
+													"patch": {
+														Type:     schema.TypeString,
+														Optional: true,
+														Elem:         &schema.Schema{Type: schema.TypeString},
+													},
+												},
+											},
 										},
 									},
 								},
@@ -1435,6 +1522,35 @@ func applicationSpecSchemaV4(allOptional bool) *schema.Schema {
 											Optional:     true,
 											Elem:         &schema.Schema{Type: schema.TypeString},
 											ValidateFunc: validateMetadataAnnotations,
+										},
+										"patches": {
+											Type:     schema.TypeList,
+											Optional: true,
+											Elem: &schema.Resource{
+												Schema: map[string]*schema.Schema{
+													"target": {
+														Type:     schema.TypeSet,
+														Required: true,
+														Elem: &schema.Resource{
+															Schema: map[string]*schema.Schema{
+																"kind": {
+																	Type:     schema.TypeString,
+																	Optional: true,
+																},
+																"name": {
+																	Type:     schema.TypeString,
+																	Optional: true,
+																},
+															},
+														},
+													},
+													"patch": {
+														Type:     schema.TypeString,
+														Optional: true,
+														Elem:         &schema.Schema{Type: schema.TypeString},
+													},
+												},
+											},
 										},
 									},
 								},

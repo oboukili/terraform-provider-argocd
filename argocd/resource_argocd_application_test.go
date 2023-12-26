@@ -1236,19 +1236,30 @@ resource "argocd_application" "kustomize" {
       path            = "examples/helloWorld"
       target_revision = "release-kustomize-v3.7"
       kustomize {
-  	    name_prefix  = "foo-"
+  	    	name_prefix  = "foo-"
 	  	name_suffix = "-bar"
 	  	images = [
-          "hashicorp/terraform:light",
-	    ]
+          		"hashicorp/terraform:light",
+	    	]
 	  	common_labels = {
 		  "this.is.a.common" = "la-bel"
 		  "another.io/one"   = "true" 
-	    }
-        common_annotations = {
+	    	}
+        	common_annotations = {
 		  "this.is.a.common" = "anno-tation"
 		  "another.io/one"   = "false"
-	    }
+	    	}
+	    	// patches {
+		// 	target {
+		// 		kind = "Deployment"
+		// 		name = "the-deployment"
+		// 	}
+		// 	patch = <<-EOT
+		// 		- op: replace
+		// 		path: /spec/template/spec/containers/0/ports/0/containerPort
+		// 		value: 443
+		// 	EOT
+        	// }
       }
     }
 

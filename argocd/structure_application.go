@@ -234,6 +234,41 @@ func expandApplicationSourceKustomize(in []interface{}) *application.Application
 		}
 	}
 
+	if patches, ok := a["patches"]; ok {
+		for _, v := range  patches.([]interface{}) {
+			patchMap := v.(map[string]interface{})
+			kustomizePatch := application.KustomizePatch{}
+
+			if patch, ok := patchMap["patch"]; ok {
+				kustomizePatch.Patch = patch.(string)
+			}
+
+			if target, ok := patchMap["target"]; ok {
+				targetList := target.(*schema.Set).List()
+				if len(targetList) > 0 {
+					targetMap := targetList[0].(map[string]interface{})
+					kustomizeSelector := application.KustomizeSelector{
+						KustomizeResId: application.KustomizeResId{
+							KustomizeGvk: application.KustomizeGvk{},
+						},
+					}
+
+					if kind, ok := targetMap["kind"]; ok {
+						kustomizeSelector.KustomizeResId.KustomizeGvk.Kind = kind.(string)
+					}
+
+					if name, ok := targetMap["name"]; ok {
+						kustomizeSelector.KustomizeResId.Name = name.(string)
+					}
+
+					kustomizePatch.Target = &kustomizeSelector
+				}
+			}
+
+			result.Patches = append(result.Patches, kustomizePatch)
+		}
+	}
+
 	return result
 }
 

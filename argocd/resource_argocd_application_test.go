@@ -1255,9 +1255,9 @@ resource "argocd_application" "kustomize" {
 				name = "the-deployment"
 			}
 			patch = <<-EOT
-				- op: replace
-				path: /spec/template/spec/containers/0/ports/0/containerPort
-				value: 443
+			    - op: replace
+				path: /spec/template/spec/containers/0/name
+				value: the-container-1
 			EOT
         	}
       }

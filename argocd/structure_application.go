@@ -781,6 +781,7 @@ func flattenApplicationSourceKustomize(as []*application.ApplicationSourceKustom
 			}
 
 			var patches []map[string]interface{}
+
 			for _, p := range a.Patches {
 				target := make(map[string]interface{})
 				if p.Target != nil {
@@ -789,6 +790,7 @@ func flattenApplicationSourceKustomize(as []*application.ApplicationSourceKustom
 						"name": p.Target.KustomizeResId.Name,
 					}
 				}
+
 				patches = append(patches, map[string]interface{}{
 					"patch":  p.Patch,
 					"target": []map[string]interface{}{target},

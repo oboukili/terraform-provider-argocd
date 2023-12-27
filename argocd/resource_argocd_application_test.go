@@ -1254,10 +1254,11 @@ resource "argocd_application" "kustomize" {
 				kind = "Deployment"
 				name = "the-deployment"
 			}
+			# alignment will cause unable to parse SM or JSON patch error
 			patch = <<-EOT
-			    - op: replace
-				path: /spec/template/spec/containers/0/name
-				value: the-container-1
+			  - op: replace
+			    path: /spec/template/spec/containers/0/name
+			    value: the-container-1
 			EOT
         	}
       }

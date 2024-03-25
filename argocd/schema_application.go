@@ -1438,6 +1438,7 @@ func applicationSpecSchemaV4(allOptional bool) *schema.Schema {
 										},
 										"patches": {
 											Type:     schema.TypeList,
+											Description: "Patches is a list of Kustomize patches",
 											Optional: true,
 											Elem: &schema.Resource{
 												Schema: map[string]*schema.Schema{
@@ -1454,6 +1455,26 @@ func applicationSpecSchemaV4(allOptional bool) *schema.Schema {
 																	Type:     schema.TypeString,
 																	Optional: true,
 																},
+																"labelSelector": {
+																	Type:     schema.TypeString,
+																	Optional: true,
+																},
+																"annotationSelector": {
+																	Type:     schema.TypeString,
+																	Optional: true,
+																},
+																"group": {
+																	Type:     schema.TypeString,
+																	Optional: true,
+																},
+																"namespace": {
+																	Type:     schema.TypeString,
+																	Optional: true,
+																},
+																"version": {
+																	Type:     schema.TypeString,
+																	Optional: true,
+																},
 															},
 														},
 													},
@@ -1461,6 +1482,16 @@ func applicationSpecSchemaV4(allOptional bool) *schema.Schema {
 														Type:     schema.TypeString,
 														Optional: true,
 														Elem:     &schema.Schema{Type: schema.TypeString},
+													},
+													"path": {
+														Type:     schema.TypeString,
+														Optional: true,
+														Elem:     &schema.Schema{Type: schema.TypeString},
+													},
+													"options": {
+														Type:     schema.TypeMap,
+														Optional: true,
+														Elem:     &schema.Schema{Type: schema.TypeBool},
 													},
 												},
 											},

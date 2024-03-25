@@ -171,7 +171,7 @@ func TestAccArgoCDApplication_Helm_FileParameters(t *testing.T) {
 
 func TestAccArgoCDApplication_Kustomize(t *testing.T) {
 	resource.ParallelTest(t, resource.TestCase{
-		PreCheck:          func() { testAccPreCheck(t) },
+		PreCheck:          func() { testAccPreCheck(t); testAccPreCheckFeatureSupported(t, features.ApplicationKustomizePatches) },
 		ProviderFactories: testAccProviders,
 		Steps: []resource.TestStep{
 			{

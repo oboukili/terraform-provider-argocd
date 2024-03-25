@@ -1437,9 +1437,9 @@ func applicationSpecSchemaV4(allOptional bool) *schema.Schema {
 											ValidateFunc: validateMetadataAnnotations,
 										},
 										"patches": {
-											Type:     schema.TypeList,
+											Type:        schema.TypeList,
 											Description: "Patches is a list of Kustomize patches",
-											Optional: true,
+											Optional:    true,
 											Elem: &schema.Resource{
 												Schema: map[string]*schema.Schema{
 													"target": {

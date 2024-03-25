@@ -816,7 +816,7 @@ Optional:
 - `images` (Set of String) List of Kustomize image override specifications.
 - `name_prefix` (String) Prefix appended to resources for Kustomize apps.
 - `name_suffix` (String) Suffix appended to resources for Kustomize apps.
-- `patches` (Block List) (see [below for nested schema](#nestedblock--spec--generator--cluster_decision_resource--template--spec--source--kustomize--patches))
+- `patches` (Block List) Patches is a list of Kustomize patches (see [below for nested schema](#nestedblock--spec--generator--cluster_decision_resource--template--spec--source--kustomize--patches))
 - `version` (String) Version of Kustomize to use for rendering manifests.
 
 <a id="nestedblock--spec--generator--cluster_decision_resource--template--spec--source--kustomize--patches"></a>
@@ -828,15 +828,22 @@ Required:
 
 Optional:
 
+- `options` (Map of Boolean)
 - `patch` (String)
+- `path` (String)
 
 <a id="nestedblock--spec--generator--cluster_decision_resource--template--spec--source--kustomize--patches--target"></a>
 ### Nested Schema for `spec.generator.cluster_decision_resource.template.spec.source.kustomize.patches.target`
 
 Optional:
 
+- `annotationSelector` (String)
+- `group` (String)
 - `kind` (String)
+- `labelSelector` (String)
 - `name` (String)
+- `namespace` (String)
+- `version` (String)
 
 
 
@@ -1106,7 +1113,7 @@ Optional:
 - `images` (Set of String) List of Kustomize image override specifications.
 - `name_prefix` (String) Prefix appended to resources for Kustomize apps.
 - `name_suffix` (String) Suffix appended to resources for Kustomize apps.
-- `patches` (Block List) (see [below for nested schema](#nestedblock--spec--generator--clusters--template--spec--source--kustomize--patches))
+- `patches` (Block List) Patches is a list of Kustomize patches (see [below for nested schema](#nestedblock--spec--generator--clusters--template--spec--source--kustomize--patches))
 - `version` (String) Version of Kustomize to use for rendering manifests.
 
 <a id="nestedblock--spec--generator--clusters--template--spec--source--kustomize--patches"></a>
@@ -1118,15 +1125,22 @@ Required:
 
 Optional:
 
+- `options` (Map of Boolean)
 - `patch` (String)
+- `path` (String)
 
 <a id="nestedblock--spec--generator--clusters--template--spec--source--kustomize--patches--target"></a>
 ### Nested Schema for `spec.generator.clusters.template.spec.source.kustomize.patches.target`
 
 Optional:
 
+- `annotationSelector` (String)
+- `group` (String)
 - `kind` (String)
+- `labelSelector` (String)
 - `name` (String)
+- `namespace` (String)
+- `version` (String)
 
 
 
@@ -1402,7 +1416,7 @@ Optional:
 - `images` (Set of String) List of Kustomize image override specifications.
 - `name_prefix` (String) Prefix appended to resources for Kustomize apps.
 - `name_suffix` (String) Suffix appended to resources for Kustomize apps.
-- `patches` (Block List) (see [below for nested schema](#nestedblock--spec--generator--git--template--spec--source--kustomize--patches))
+- `patches` (Block List) Patches is a list of Kustomize patches (see [below for nested schema](#nestedblock--spec--generator--git--template--spec--source--kustomize--patches))
 - `version` (String) Version of Kustomize to use for rendering manifests.
 
 <a id="nestedblock--spec--generator--git--template--spec--source--kustomize--patches"></a>
@@ -1414,15 +1428,22 @@ Required:
 
 Optional:
 
+- `options` (Map of Boolean)
 - `patch` (String)
+- `path` (String)
 
 <a id="nestedblock--spec--generator--git--template--spec--source--kustomize--patches--target"></a>
 ### Nested Schema for `spec.generator.git.template.spec.source.kustomize.patches.target`
 
 Optional:
 
+- `annotationSelector` (String)
+- `group` (String)
 - `kind` (String)
+- `labelSelector` (String)
 - `name` (String)
+- `namespace` (String)
+- `version` (String)
 
 
 
@@ -1674,7 +1695,7 @@ Optional:
 - `images` (Set of String) List of Kustomize image override specifications.
 - `name_prefix` (String) Prefix appended to resources for Kustomize apps.
 - `name_suffix` (String) Suffix appended to resources for Kustomize apps.
-- `patches` (Block List) (see [below for nested schema](#nestedblock--spec--generator--list--template--spec--source--kustomize--patches))
+- `patches` (Block List) Patches is a list of Kustomize patches (see [below for nested schema](#nestedblock--spec--generator--list--template--spec--source--kustomize--patches))
 - `version` (String) Version of Kustomize to use for rendering manifests.
 
 <a id="nestedblock--spec--generator--list--template--spec--source--kustomize--patches"></a>
@@ -1686,15 +1707,22 @@ Required:
 
 Optional:
 
+- `options` (Map of Boolean)
 - `patch` (String)
+- `path` (String)
 
 <a id="nestedblock--spec--generator--list--template--spec--source--kustomize--patches--target"></a>
 ### Nested Schema for `spec.generator.list.template.spec.source.kustomize.patches.target`
 
 Optional:
 
+- `annotationSelector` (String)
+- `group` (String)
 - `kind` (String)
+- `labelSelector` (String)
 - `name` (String)
+- `namespace` (String)
+- `version` (String)
 
 
 
@@ -1995,7 +2023,7 @@ Optional:
 - `images` (Set of String) List of Kustomize image override specifications.
 - `name_prefix` (String) Prefix appended to resources for Kustomize apps.
 - `name_suffix` (String) Suffix appended to resources for Kustomize apps.
-- `patches` (Block List) (see [below for nested schema](#nestedblock--spec--generator--matrix--generator--cluster_decision_resource--template--spec--source--kustomize--patches))
+- `patches` (Block List) Patches is a list of Kustomize patches (see [below for nested schema](#nestedblock--spec--generator--matrix--generator--cluster_decision_resource--template--spec--source--kustomize--patches))
 - `version` (String) Version of Kustomize to use for rendering manifests.
 
 <a id="nestedblock--spec--generator--matrix--generator--cluster_decision_resource--template--spec--source--kustomize--patches"></a>
@@ -2007,15 +2035,22 @@ Required:
 
 Optional:
 
+- `options` (Map of Boolean)
 - `patch` (String)
+- `path` (String)
 
 <a id="nestedblock--spec--generator--matrix--generator--cluster_decision_resource--template--spec--source--kustomize--patches--target"></a>
 ### Nested Schema for `spec.generator.matrix.generator.cluster_decision_resource.template.spec.source.kustomize.patches.target`
 
 Optional:
 
+- `annotationSelector` (String)
+- `group` (String)
 - `kind` (String)
+- `labelSelector` (String)
 - `name` (String)
+- `namespace` (String)
+- `version` (String)
 
 
 
@@ -2285,7 +2320,7 @@ Optional:
 - `images` (Set of String) List of Kustomize image override specifications.
 - `name_prefix` (String) Prefix appended to resources for Kustomize apps.
 - `name_suffix` (String) Suffix appended to resources for Kustomize apps.
-- `patches` (Block List) (see [below for nested schema](#nestedblock--spec--generator--matrix--generator--clusters--template--spec--source--kustomize--patches))
+- `patches` (Block List) Patches is a list of Kustomize patches (see [below for nested schema](#nestedblock--spec--generator--matrix--generator--clusters--template--spec--source--kustomize--patches))
 - `version` (String) Version of Kustomize to use for rendering manifests.
 
 <a id="nestedblock--spec--generator--matrix--generator--clusters--template--spec--source--kustomize--patches"></a>
@@ -2297,15 +2332,22 @@ Required:
 
 Optional:
 
+- `options` (Map of Boolean)
 - `patch` (String)
+- `path` (String)
 
 <a id="nestedblock--spec--generator--matrix--generator--clusters--template--spec--source--kustomize--patches--target"></a>
 ### Nested Schema for `spec.generator.matrix.generator.clusters.template.spec.source.kustomize.patches.target`
 
 Optional:
 
+- `annotationSelector` (String)
+- `group` (String)
 - `kind` (String)
+- `labelSelector` (String)
 - `name` (String)
+- `namespace` (String)
+- `version` (String)
 
 
 
@@ -2581,7 +2623,7 @@ Optional:
 - `images` (Set of String) List of Kustomize image override specifications.
 - `name_prefix` (String) Prefix appended to resources for Kustomize apps.
 - `name_suffix` (String) Suffix appended to resources for Kustomize apps.
-- `patches` (Block List) (see [below for nested schema](#nestedblock--spec--generator--matrix--generator--git--template--spec--source--kustomize--patches))
+- `patches` (Block List) Patches is a list of Kustomize patches (see [below for nested schema](#nestedblock--spec--generator--matrix--generator--git--template--spec--source--kustomize--patches))
 - `version` (String) Version of Kustomize to use for rendering manifests.
 
 <a id="nestedblock--spec--generator--matrix--generator--git--template--spec--source--kustomize--patches"></a>
@@ -2593,15 +2635,22 @@ Required:
 
 Optional:
 
+- `options` (Map of Boolean)
 - `patch` (String)
+- `path` (String)
 
 <a id="nestedblock--spec--generator--matrix--generator--git--template--spec--source--kustomize--patches--target"></a>
 ### Nested Schema for `spec.generator.matrix.generator.git.template.spec.source.kustomize.patches.target`
 
 Optional:
 
+- `annotationSelector` (String)
+- `group` (String)
 - `kind` (String)
+- `labelSelector` (String)
 - `name` (String)
+- `namespace` (String)
+- `version` (String)
 
 
 
@@ -2853,7 +2902,7 @@ Optional:
 - `images` (Set of String) List of Kustomize image override specifications.
 - `name_prefix` (String) Prefix appended to resources for Kustomize apps.
 - `name_suffix` (String) Suffix appended to resources for Kustomize apps.
-- `patches` (Block List) (see [below for nested schema](#nestedblock--spec--generator--matrix--generator--list--template--spec--source--kustomize--patches))
+- `patches` (Block List) Patches is a list of Kustomize patches (see [below for nested schema](#nestedblock--spec--generator--matrix--generator--list--template--spec--source--kustomize--patches))
 - `version` (String) Version of Kustomize to use for rendering manifests.
 
 <a id="nestedblock--spec--generator--matrix--generator--list--template--spec--source--kustomize--patches"></a>
@@ -2865,15 +2914,22 @@ Required:
 
 Optional:
 
+- `options` (Map of Boolean)
 - `patch` (String)
+- `path` (String)
 
 <a id="nestedblock--spec--generator--matrix--generator--list--template--spec--source--kustomize--patches--target"></a>
 ### Nested Schema for `spec.generator.matrix.generator.list.template.spec.source.kustomize.patches.target`
 
 Optional:
 
+- `annotationSelector` (String)
+- `group` (String)
 - `kind` (String)
+- `labelSelector` (String)
 - `name` (String)
+- `namespace` (String)
+- `version` (String)
 
 
 
@@ -3172,7 +3228,7 @@ Optional:
 - `images` (Set of String) List of Kustomize image override specifications.
 - `name_prefix` (String) Prefix appended to resources for Kustomize apps.
 - `name_suffix` (String) Suffix appended to resources for Kustomize apps.
-- `patches` (Block List) (see [below for nested schema](#nestedblock--spec--generator--matrix--generator--matrix--generator--cluster_decision_resource--template--spec--source--kustomize--patches))
+- `patches` (Block List) Patches is a list of Kustomize patches (see [below for nested schema](#nestedblock--spec--generator--matrix--generator--matrix--generator--cluster_decision_resource--template--spec--source--kustomize--patches))
 - `version` (String) Version of Kustomize to use for rendering manifests.
 
 <a id="nestedblock--spec--generator--matrix--generator--matrix--generator--cluster_decision_resource--template--spec--source--kustomize--patches"></a>
@@ -3184,15 +3240,22 @@ Required:
 
 Optional:
 
+- `options` (Map of Boolean)
 - `patch` (String)
+- `path` (String)
 
 <a id="nestedblock--spec--generator--matrix--generator--matrix--generator--cluster_decision_resource--template--spec--source--kustomize--patches--target"></a>
 ### Nested Schema for `spec.generator.matrix.generator.matrix.generator.cluster_decision_resource.template.spec.source.kustomize.patches.target`
 
 Optional:
 
+- `annotationSelector` (String)
+- `group` (String)
 - `kind` (String)
+- `labelSelector` (String)
 - `name` (String)
+- `namespace` (String)
+- `version` (String)
 
 
 
@@ -3462,7 +3525,7 @@ Optional:
 - `images` (Set of String) List of Kustomize image override specifications.
 - `name_prefix` (String) Prefix appended to resources for Kustomize apps.
 - `name_suffix` (String) Suffix appended to resources for Kustomize apps.
-- `patches` (Block List) (see [below for nested schema](#nestedblock--spec--generator--matrix--generator--matrix--generator--clusters--template--spec--source--kustomize--patches))
+- `patches` (Block List) Patches is a list of Kustomize patches (see [below for nested schema](#nestedblock--spec--generator--matrix--generator--matrix--generator--clusters--template--spec--source--kustomize--patches))
 - `version` (String) Version of Kustomize to use for rendering manifests.
 
 <a id="nestedblock--spec--generator--matrix--generator--matrix--generator--clusters--template--spec--source--kustomize--patches"></a>
@@ -3474,15 +3537,22 @@ Required:
 
 Optional:
 
+- `options` (Map of Boolean)
 - `patch` (String)
+- `path` (String)
 
 <a id="nestedblock--spec--generator--matrix--generator--matrix--generator--clusters--template--spec--source--kustomize--patches--target"></a>
 ### Nested Schema for `spec.generator.matrix.generator.matrix.generator.clusters.template.spec.source.kustomize.patches.target`
 
 Optional:
 
+- `annotationSelector` (String)
+- `group` (String)
 - `kind` (String)
+- `labelSelector` (String)
 - `name` (String)
+- `namespace` (String)
+- `version` (String)
 
 
 
@@ -3758,7 +3828,7 @@ Optional:
 - `images` (Set of String) List of Kustomize image override specifications.
 - `name_prefix` (String) Prefix appended to resources for Kustomize apps.
 - `name_suffix` (String) Suffix appended to resources for Kustomize apps.
-- `patches` (Block List) (see [below for nested schema](#nestedblock--spec--generator--matrix--generator--matrix--generator--git--template--spec--source--kustomize--patches))
+- `patches` (Block List) Patches is a list of Kustomize patches (see [below for nested schema](#nestedblock--spec--generator--matrix--generator--matrix--generator--git--template--spec--source--kustomize--patches))
 - `version` (String) Version of Kustomize to use for rendering manifests.
 
 <a id="nestedblock--spec--generator--matrix--generator--matrix--generator--git--template--spec--source--kustomize--patches"></a>
@@ -3770,15 +3840,22 @@ Required:
 
 Optional:
 
+- `options` (Map of Boolean)
 - `patch` (String)
+- `path` (String)
 
 <a id="nestedblock--spec--generator--matrix--generator--matrix--generator--git--template--spec--source--kustomize--patches--target"></a>
 ### Nested Schema for `spec.generator.matrix.generator.matrix.generator.git.template.spec.source.kustomize.patches.target`
 
 Optional:
 
+- `annotationSelector` (String)
+- `group` (String)
 - `kind` (String)
+- `labelSelector` (String)
 - `name` (String)
+- `namespace` (String)
+- `version` (String)
 
 
 
@@ -4030,7 +4107,7 @@ Optional:
 - `images` (Set of String) List of Kustomize image override specifications.
 - `name_prefix` (String) Prefix appended to resources for Kustomize apps.
 - `name_suffix` (String) Suffix appended to resources for Kustomize apps.
-- `patches` (Block List) (see [below for nested schema](#nestedblock--spec--generator--matrix--generator--matrix--generator--list--template--spec--source--kustomize--patches))
+- `patches` (Block List) Patches is a list of Kustomize patches (see [below for nested schema](#nestedblock--spec--generator--matrix--generator--matrix--generator--list--template--spec--source--kustomize--patches))
 - `version` (String) Version of Kustomize to use for rendering manifests.
 
 <a id="nestedblock--spec--generator--matrix--generator--matrix--generator--list--template--spec--source--kustomize--patches"></a>
@@ -4042,15 +4119,22 @@ Required:
 
 Optional:
 
+- `options` (Map of Boolean)
 - `patch` (String)
+- `path` (String)
 
 <a id="nestedblock--spec--generator--matrix--generator--matrix--generator--list--template--spec--source--kustomize--patches--target"></a>
 ### Nested Schema for `spec.generator.matrix.generator.matrix.generator.list.template.spec.source.kustomize.patches.target`
 
 Optional:
 
+- `annotationSelector` (String)
+- `group` (String)
 - `kind` (String)
+- `labelSelector` (String)
 - `name` (String)
+- `namespace` (String)
+- `version` (String)
 
 
 
@@ -4417,7 +4501,7 @@ Optional:
 - `images` (Set of String) List of Kustomize image override specifications.
 - `name_prefix` (String) Prefix appended to resources for Kustomize apps.
 - `name_suffix` (String) Suffix appended to resources for Kustomize apps.
-- `patches` (Block List) (see [below for nested schema](#nestedblock--spec--generator--matrix--generator--matrix--generator--pull_request--template--spec--source--kustomize--patches))
+- `patches` (Block List) Patches is a list of Kustomize patches (see [below for nested schema](#nestedblock--spec--generator--matrix--generator--matrix--generator--pull_request--template--spec--source--kustomize--patches))
 - `version` (String) Version of Kustomize to use for rendering manifests.
 
 <a id="nestedblock--spec--generator--matrix--generator--matrix--generator--pull_request--template--spec--source--kustomize--patches"></a>
@@ -4429,15 +4513,22 @@ Required:
 
 Optional:
 
+- `options` (Map of Boolean)
 - `patch` (String)
+- `path` (String)
 
 <a id="nestedblock--spec--generator--matrix--generator--matrix--generator--pull_request--template--spec--source--kustomize--patches--target"></a>
 ### Nested Schema for `spec.generator.matrix.generator.matrix.generator.pull_request.template.spec.source.kustomize.patches.target`
 
 Optional:
 
+- `annotationSelector` (String)
+- `group` (String)
 - `kind` (String)
+- `labelSelector` (String)
 - `name` (String)
+- `namespace` (String)
+- `version` (String)
 
 
 
@@ -4857,7 +4948,7 @@ Optional:
 - `images` (Set of String) List of Kustomize image override specifications.
 - `name_prefix` (String) Prefix appended to resources for Kustomize apps.
 - `name_suffix` (String) Suffix appended to resources for Kustomize apps.
-- `patches` (Block List) (see [below for nested schema](#nestedblock--spec--generator--matrix--generator--matrix--generator--scm_provider--template--spec--source--kustomize--patches))
+- `patches` (Block List) Patches is a list of Kustomize patches (see [below for nested schema](#nestedblock--spec--generator--matrix--generator--matrix--generator--scm_provider--template--spec--source--kustomize--patches))
 - `version` (String) Version of Kustomize to use for rendering manifests.
 
 <a id="nestedblock--spec--generator--matrix--generator--matrix--generator--scm_provider--template--spec--source--kustomize--patches"></a>
@@ -4869,15 +4960,22 @@ Required:
 
 Optional:
 
+- `options` (Map of Boolean)
 - `patch` (String)
+- `path` (String)
 
 <a id="nestedblock--spec--generator--matrix--generator--matrix--generator--scm_provider--template--spec--source--kustomize--patches--target"></a>
 ### Nested Schema for `spec.generator.matrix.generator.matrix.generator.scm_provider.template.spec.source.kustomize.patches.target`
 
 Optional:
 
+- `annotationSelector` (String)
+- `group` (String)
 - `kind` (String)
+- `labelSelector` (String)
 - `name` (String)
+- `namespace` (String)
+- `version` (String)
 
 
 
@@ -5138,7 +5236,7 @@ Optional:
 - `images` (Set of String) List of Kustomize image override specifications.
 - `name_prefix` (String) Prefix appended to resources for Kustomize apps.
 - `name_suffix` (String) Suffix appended to resources for Kustomize apps.
-- `patches` (Block List) (see [below for nested schema](#nestedblock--spec--generator--matrix--generator--matrix--template--spec--source--kustomize--patches))
+- `patches` (Block List) Patches is a list of Kustomize patches (see [below for nested schema](#nestedblock--spec--generator--matrix--generator--matrix--template--spec--source--kustomize--patches))
 - `version` (String) Version of Kustomize to use for rendering manifests.
 
 <a id="nestedblock--spec--generator--matrix--generator--matrix--template--spec--source--kustomize--patches"></a>
@@ -5150,15 +5248,22 @@ Required:
 
 Optional:
 
+- `options` (Map of Boolean)
 - `patch` (String)
+- `path` (String)
 
 <a id="nestedblock--spec--generator--matrix--generator--matrix--template--spec--source--kustomize--patches--target"></a>
 ### Nested Schema for `spec.generator.matrix.generator.matrix.template.spec.source.kustomize.patches.target`
 
 Optional:
 
+- `annotationSelector` (String)
+- `group` (String)
 - `kind` (String)
+- `labelSelector` (String)
 - `name` (String)
+- `namespace` (String)
+- `version` (String)
 
 
 
@@ -5458,7 +5563,7 @@ Optional:
 - `images` (Set of String) List of Kustomize image override specifications.
 - `name_prefix` (String) Prefix appended to resources for Kustomize apps.
 - `name_suffix` (String) Suffix appended to resources for Kustomize apps.
-- `patches` (Block List) (see [below for nested schema](#nestedblock--spec--generator--matrix--generator--merge--generator--cluster_decision_resource--template--spec--source--kustomize--patches))
+- `patches` (Block List) Patches is a list of Kustomize patches (see [below for nested schema](#nestedblock--spec--generator--matrix--generator--merge--generator--cluster_decision_resource--template--spec--source--kustomize--patches))
 - `version` (String) Version of Kustomize to use for rendering manifests.
 
 <a id="nestedblock--spec--generator--matrix--generator--merge--generator--cluster_decision_resource--template--spec--source--kustomize--patches"></a>
@@ -5470,15 +5575,22 @@ Required:
 
 Optional:
 
+- `options` (Map of Boolean)
 - `patch` (String)
+- `path` (String)
 
 <a id="nestedblock--spec--generator--matrix--generator--merge--generator--cluster_decision_resource--template--spec--source--kustomize--patches--target"></a>
 ### Nested Schema for `spec.generator.matrix.generator.merge.generator.cluster_decision_resource.template.spec.source.kustomize.patches.target`
 
 Optional:
 
+- `annotationSelector` (String)
+- `group` (String)
 - `kind` (String)
+- `labelSelector` (String)
 - `name` (String)
+- `namespace` (String)
+- `version` (String)
 
 
 
@@ -5748,7 +5860,7 @@ Optional:
 - `images` (Set of String) List of Kustomize image override specifications.
 - `name_prefix` (String) Prefix appended to resources for Kustomize apps.
 - `name_suffix` (String) Suffix appended to resources for Kustomize apps.
-- `patches` (Block List) (see [below for nested schema](#nestedblock--spec--generator--matrix--generator--merge--generator--clusters--template--spec--source--kustomize--patches))
+- `patches` (Block List) Patches is a list of Kustomize patches (see [below for nested schema](#nestedblock--spec--generator--matrix--generator--merge--generator--clusters--template--spec--source--kustomize--patches))
 - `version` (String) Version of Kustomize to use for rendering manifests.
 
 <a id="nestedblock--spec--generator--matrix--generator--merge--generator--clusters--template--spec--source--kustomize--patches"></a>
@@ -5760,15 +5872,22 @@ Required:
 
 Optional:
 
+- `options` (Map of Boolean)
 - `patch` (String)
+- `path` (String)
 
 <a id="nestedblock--spec--generator--matrix--generator--merge--generator--clusters--template--spec--source--kustomize--patches--target"></a>
 ### Nested Schema for `spec.generator.matrix.generator.merge.generator.clusters.template.spec.source.kustomize.patches.target`
 
 Optional:
 
+- `annotationSelector` (String)
+- `group` (String)
 - `kind` (String)
+- `labelSelector` (String)
 - `name` (String)
+- `namespace` (String)
+- `version` (String)
 
 
 
@@ -6044,7 +6163,7 @@ Optional:
 - `images` (Set of String) List of Kustomize image override specifications.
 - `name_prefix` (String) Prefix appended to resources for Kustomize apps.
 - `name_suffix` (String) Suffix appended to resources for Kustomize apps.
-- `patches` (Block List) (see [below for nested schema](#nestedblock--spec--generator--matrix--generator--merge--generator--git--template--spec--source--kustomize--patches))
+- `patches` (Block List) Patches is a list of Kustomize patches (see [below for nested schema](#nestedblock--spec--generator--matrix--generator--merge--generator--git--template--spec--source--kustomize--patches))
 - `version` (String) Version of Kustomize to use for rendering manifests.
 
 <a id="nestedblock--spec--generator--matrix--generator--merge--generator--git--template--spec--source--kustomize--patches"></a>
@@ -6056,15 +6175,22 @@ Required:
 
 Optional:
 
+- `options` (Map of Boolean)
 - `patch` (String)
+- `path` (String)
 
 <a id="nestedblock--spec--generator--matrix--generator--merge--generator--git--template--spec--source--kustomize--patches--target"></a>
 ### Nested Schema for `spec.generator.matrix.generator.merge.generator.git.template.spec.source.kustomize.patches.target`
 
 Optional:
 
+- `annotationSelector` (String)
+- `group` (String)
 - `kind` (String)
+- `labelSelector` (String)
 - `name` (String)
+- `namespace` (String)
+- `version` (String)
 
 
 
@@ -6316,7 +6442,7 @@ Optional:
 - `images` (Set of String) List of Kustomize image override specifications.
 - `name_prefix` (String) Prefix appended to resources for Kustomize apps.
 - `name_suffix` (String) Suffix appended to resources for Kustomize apps.
-- `patches` (Block List) (see [below for nested schema](#nestedblock--spec--generator--matrix--generator--merge--generator--list--template--spec--source--kustomize--patches))
+- `patches` (Block List) Patches is a list of Kustomize patches (see [below for nested schema](#nestedblock--spec--generator--matrix--generator--merge--generator--list--template--spec--source--kustomize--patches))
 - `version` (String) Version of Kustomize to use for rendering manifests.
 
 <a id="nestedblock--spec--generator--matrix--generator--merge--generator--list--template--spec--source--kustomize--patches"></a>
@@ -6328,15 +6454,22 @@ Required:
 
 Optional:
 
+- `options` (Map of Boolean)
 - `patch` (String)
+- `path` (String)
 
 <a id="nestedblock--spec--generator--matrix--generator--merge--generator--list--template--spec--source--kustomize--patches--target"></a>
 ### Nested Schema for `spec.generator.matrix.generator.merge.generator.list.template.spec.source.kustomize.patches.target`
 
 Optional:
 
+- `annotationSelector` (String)
+- `group` (String)
 - `kind` (String)
+- `labelSelector` (String)
 - `name` (String)
+- `namespace` (String)
+- `version` (String)
 
 
 
@@ -6703,7 +6836,7 @@ Optional:
 - `images` (Set of String) List of Kustomize image override specifications.
 - `name_prefix` (String) Prefix appended to resources for Kustomize apps.
 - `name_suffix` (String) Suffix appended to resources for Kustomize apps.
-- `patches` (Block List) (see [below for nested schema](#nestedblock--spec--generator--matrix--generator--merge--generator--pull_request--template--spec--source--kustomize--patches))
+- `patches` (Block List) Patches is a list of Kustomize patches (see [below for nested schema](#nestedblock--spec--generator--matrix--generator--merge--generator--pull_request--template--spec--source--kustomize--patches))
 - `version` (String) Version of Kustomize to use for rendering manifests.
 
 <a id="nestedblock--spec--generator--matrix--generator--merge--generator--pull_request--template--spec--source--kustomize--patches"></a>
@@ -6715,15 +6848,22 @@ Required:
 
 Optional:
 
+- `options` (Map of Boolean)
 - `patch` (String)
+- `path` (String)
 
 <a id="nestedblock--spec--generator--matrix--generator--merge--generator--pull_request--template--spec--source--kustomize--patches--target"></a>
 ### Nested Schema for `spec.generator.matrix.generator.merge.generator.pull_request.template.spec.source.kustomize.patches.target`
 
 Optional:
 
+- `annotationSelector` (String)
+- `group` (String)
 - `kind` (String)
+- `labelSelector` (String)
 - `name` (String)
+- `namespace` (String)
+- `version` (String)
 
 
 
@@ -7143,7 +7283,7 @@ Optional:
 - `images` (Set of String) List of Kustomize image override specifications.
 - `name_prefix` (String) Prefix appended to resources for Kustomize apps.
 - `name_suffix` (String) Suffix appended to resources for Kustomize apps.
-- `patches` (Block List) (see [below for nested schema](#nestedblock--spec--generator--matrix--generator--merge--generator--scm_provider--template--spec--source--kustomize--patches))
+- `patches` (Block List) Patches is a list of Kustomize patches (see [below for nested schema](#nestedblock--spec--generator--matrix--generator--merge--generator--scm_provider--template--spec--source--kustomize--patches))
 - `version` (String) Version of Kustomize to use for rendering manifests.
 
 <a id="nestedblock--spec--generator--matrix--generator--merge--generator--scm_provider--template--spec--source--kustomize--patches"></a>
@@ -7155,15 +7295,22 @@ Required:
 
 Optional:
 
+- `options` (Map of Boolean)
 - `patch` (String)
+- `path` (String)
 
 <a id="nestedblock--spec--generator--matrix--generator--merge--generator--scm_provider--template--spec--source--kustomize--patches--target"></a>
 ### Nested Schema for `spec.generator.matrix.generator.merge.generator.scm_provider.template.spec.source.kustomize.patches.target`
 
 Optional:
 
+- `annotationSelector` (String)
+- `group` (String)
 - `kind` (String)
+- `labelSelector` (String)
 - `name` (String)
+- `namespace` (String)
+- `version` (String)
 
 
 
@@ -7424,7 +7571,7 @@ Optional:
 - `images` (Set of String) List of Kustomize image override specifications.
 - `name_prefix` (String) Prefix appended to resources for Kustomize apps.
 - `name_suffix` (String) Suffix appended to resources for Kustomize apps.
-- `patches` (Block List) (see [below for nested schema](#nestedblock--spec--generator--matrix--generator--merge--template--spec--source--kustomize--patches))
+- `patches` (Block List) Patches is a list of Kustomize patches (see [below for nested schema](#nestedblock--spec--generator--matrix--generator--merge--template--spec--source--kustomize--patches))
 - `version` (String) Version of Kustomize to use for rendering manifests.
 
 <a id="nestedblock--spec--generator--matrix--generator--merge--template--spec--source--kustomize--patches"></a>
@@ -7436,15 +7583,22 @@ Required:
 
 Optional:
 
+- `options` (Map of Boolean)
 - `patch` (String)
+- `path` (String)
 
 <a id="nestedblock--spec--generator--matrix--generator--merge--template--spec--source--kustomize--patches--target"></a>
 ### Nested Schema for `spec.generator.matrix.generator.merge.template.spec.source.kustomize.patches.target`
 
 Optional:
 
+- `annotationSelector` (String)
+- `group` (String)
 - `kind` (String)
+- `labelSelector` (String)
 - `name` (String)
+- `namespace` (String)
+- `version` (String)
 
 
 
@@ -7811,7 +7965,7 @@ Optional:
 - `images` (Set of String) List of Kustomize image override specifications.
 - `name_prefix` (String) Prefix appended to resources for Kustomize apps.
 - `name_suffix` (String) Suffix appended to resources for Kustomize apps.
-- `patches` (Block List) (see [below for nested schema](#nestedblock--spec--generator--matrix--generator--pull_request--template--spec--source--kustomize--patches))
+- `patches` (Block List) Patches is a list of Kustomize patches (see [below for nested schema](#nestedblock--spec--generator--matrix--generator--pull_request--template--spec--source--kustomize--patches))
 - `version` (String) Version of Kustomize to use for rendering manifests.
 
 <a id="nestedblock--spec--generator--matrix--generator--pull_request--template--spec--source--kustomize--patches"></a>
@@ -7823,15 +7977,22 @@ Required:
 
 Optional:
 
+- `options` (Map of Boolean)
 - `patch` (String)
+- `path` (String)
 
 <a id="nestedblock--spec--generator--matrix--generator--pull_request--template--spec--source--kustomize--patches--target"></a>
 ### Nested Schema for `spec.generator.matrix.generator.pull_request.template.spec.source.kustomize.patches.target`
 
 Optional:
 
+- `annotationSelector` (String)
+- `group` (String)
 - `kind` (String)
+- `labelSelector` (String)
 - `name` (String)
+- `namespace` (String)
+- `version` (String)
 
 
 
@@ -8251,7 +8412,7 @@ Optional:
 - `images` (Set of String) List of Kustomize image override specifications.
 - `name_prefix` (String) Prefix appended to resources for Kustomize apps.
 - `name_suffix` (String) Suffix appended to resources for Kustomize apps.
-- `patches` (Block List) (see [below for nested schema](#nestedblock--spec--generator--matrix--generator--scm_provider--template--spec--source--kustomize--patches))
+- `patches` (Block List) Patches is a list of Kustomize patches (see [below for nested schema](#nestedblock--spec--generator--matrix--generator--scm_provider--template--spec--source--kustomize--patches))
 - `version` (String) Version of Kustomize to use for rendering manifests.
 
 <a id="nestedblock--spec--generator--matrix--generator--scm_provider--template--spec--source--kustomize--patches"></a>
@@ -8263,15 +8424,22 @@ Required:
 
 Optional:
 
+- `options` (Map of Boolean)
 - `patch` (String)
+- `path` (String)
 
 <a id="nestedblock--spec--generator--matrix--generator--scm_provider--template--spec--source--kustomize--patches--target"></a>
 ### Nested Schema for `spec.generator.matrix.generator.scm_provider.template.spec.source.kustomize.patches.target`
 
 Optional:
 
+- `annotationSelector` (String)
+- `group` (String)
 - `kind` (String)
+- `labelSelector` (String)
 - `name` (String)
+- `namespace` (String)
+- `version` (String)
 
 
 
@@ -8532,7 +8700,7 @@ Optional:
 - `images` (Set of String) List of Kustomize image override specifications.
 - `name_prefix` (String) Prefix appended to resources for Kustomize apps.
 - `name_suffix` (String) Suffix appended to resources for Kustomize apps.
-- `patches` (Block List) (see [below for nested schema](#nestedblock--spec--generator--matrix--template--spec--source--kustomize--patches))
+- `patches` (Block List) Patches is a list of Kustomize patches (see [below for nested schema](#nestedblock--spec--generator--matrix--template--spec--source--kustomize--patches))
 - `version` (String) Version of Kustomize to use for rendering manifests.
 
 <a id="nestedblock--spec--generator--matrix--template--spec--source--kustomize--patches"></a>
@@ -8544,15 +8712,22 @@ Required:
 
 Optional:
 
+- `options` (Map of Boolean)
 - `patch` (String)
+- `path` (String)
 
 <a id="nestedblock--spec--generator--matrix--template--spec--source--kustomize--patches--target"></a>
 ### Nested Schema for `spec.generator.matrix.template.spec.source.kustomize.patches.target`
 
 Optional:
 
+- `annotationSelector` (String)
+- `group` (String)
 - `kind` (String)
+- `labelSelector` (String)
 - `name` (String)
+- `namespace` (String)
+- `version` (String)
 
 
 
@@ -8854,7 +9029,7 @@ Optional:
 - `images` (Set of String) List of Kustomize image override specifications.
 - `name_prefix` (String) Prefix appended to resources for Kustomize apps.
 - `name_suffix` (String) Suffix appended to resources for Kustomize apps.
-- `patches` (Block List) (see [below for nested schema](#nestedblock--spec--generator--merge--generator--cluster_decision_resource--template--spec--source--kustomize--patches))
+- `patches` (Block List) Patches is a list of Kustomize patches (see [below for nested schema](#nestedblock--spec--generator--merge--generator--cluster_decision_resource--template--spec--source--kustomize--patches))
 - `version` (String) Version of Kustomize to use for rendering manifests.
 
 <a id="nestedblock--spec--generator--merge--generator--cluster_decision_resource--template--spec--source--kustomize--patches"></a>
@@ -8866,15 +9041,22 @@ Required:
 
 Optional:
 
+- `options` (Map of Boolean)
 - `patch` (String)
+- `path` (String)
 
 <a id="nestedblock--spec--generator--merge--generator--cluster_decision_resource--template--spec--source--kustomize--patches--target"></a>
 ### Nested Schema for `spec.generator.merge.generator.cluster_decision_resource.template.spec.source.kustomize.patches.target`
 
 Optional:
 
+- `annotationSelector` (String)
+- `group` (String)
 - `kind` (String)
+- `labelSelector` (String)
 - `name` (String)
+- `namespace` (String)
+- `version` (String)
 
 
 
@@ -9144,7 +9326,7 @@ Optional:
 - `images` (Set of String) List of Kustomize image override specifications.
 - `name_prefix` (String) Prefix appended to resources for Kustomize apps.
 - `name_suffix` (String) Suffix appended to resources for Kustomize apps.
-- `patches` (Block List) (see [below for nested schema](#nestedblock--spec--generator--merge--generator--clusters--template--spec--source--kustomize--patches))
+- `patches` (Block List) Patches is a list of Kustomize patches (see [below for nested schema](#nestedblock--spec--generator--merge--generator--clusters--template--spec--source--kustomize--patches))
 - `version` (String) Version of Kustomize to use for rendering manifests.
 
 <a id="nestedblock--spec--generator--merge--generator--clusters--template--spec--source--kustomize--patches"></a>
@@ -9156,15 +9338,22 @@ Required:
 
 Optional:
 
+- `options` (Map of Boolean)
 - `patch` (String)
+- `path` (String)
 
 <a id="nestedblock--spec--generator--merge--generator--clusters--template--spec--source--kustomize--patches--target"></a>
 ### Nested Schema for `spec.generator.merge.generator.clusters.template.spec.source.kustomize.patches.target`
 
 Optional:
 
+- `annotationSelector` (String)
+- `group` (String)
 - `kind` (String)
+- `labelSelector` (String)
 - `name` (String)
+- `namespace` (String)
+- `version` (String)
 
 
 
@@ -9440,7 +9629,7 @@ Optional:
 - `images` (Set of String) List of Kustomize image override specifications.
 - `name_prefix` (String) Prefix appended to resources for Kustomize apps.
 - `name_suffix` (String) Suffix appended to resources for Kustomize apps.
-- `patches` (Block List) (see [below for nested schema](#nestedblock--spec--generator--merge--generator--git--template--spec--source--kustomize--patches))
+- `patches` (Block List) Patches is a list of Kustomize patches (see [below for nested schema](#nestedblock--spec--generator--merge--generator--git--template--spec--source--kustomize--patches))
 - `version` (String) Version of Kustomize to use for rendering manifests.
 
 <a id="nestedblock--spec--generator--merge--generator--git--template--spec--source--kustomize--patches"></a>
@@ -9452,15 +9641,22 @@ Required:
 
 Optional:
 
+- `options` (Map of Boolean)
 - `patch` (String)
+- `path` (String)
 
 <a id="nestedblock--spec--generator--merge--generator--git--template--spec--source--kustomize--patches--target"></a>
 ### Nested Schema for `spec.generator.merge.generator.git.template.spec.source.kustomize.patches.target`
 
 Optional:
 
+- `annotationSelector` (String)
+- `group` (String)
 - `kind` (String)
+- `labelSelector` (String)
 - `name` (String)
+- `namespace` (String)
+- `version` (String)
 
 
 
@@ -9712,7 +9908,7 @@ Optional:
 - `images` (Set of String) List of Kustomize image override specifications.
 - `name_prefix` (String) Prefix appended to resources for Kustomize apps.
 - `name_suffix` (String) Suffix appended to resources for Kustomize apps.
-- `patches` (Block List) (see [below for nested schema](#nestedblock--spec--generator--merge--generator--list--template--spec--source--kustomize--patches))
+- `patches` (Block List) Patches is a list of Kustomize patches (see [below for nested schema](#nestedblock--spec--generator--merge--generator--list--template--spec--source--kustomize--patches))
 - `version` (String) Version of Kustomize to use for rendering manifests.
 
 <a id="nestedblock--spec--generator--merge--generator--list--template--spec--source--kustomize--patches"></a>
@@ -9724,15 +9920,22 @@ Required:
 
 Optional:
 
+- `options` (Map of Boolean)
 - `patch` (String)
+- `path` (String)
 
 <a id="nestedblock--spec--generator--merge--generator--list--template--spec--source--kustomize--patches--target"></a>
 ### Nested Schema for `spec.generator.merge.generator.list.template.spec.source.kustomize.patches.target`
 
 Optional:
 
+- `annotationSelector` (String)
+- `group` (String)
 - `kind` (String)
+- `labelSelector` (String)
 - `name` (String)
+- `namespace` (String)
+- `version` (String)
 
 
 
@@ -10031,7 +10234,7 @@ Optional:
 - `images` (Set of String) List of Kustomize image override specifications.
 - `name_prefix` (String) Prefix appended to resources for Kustomize apps.
 - `name_suffix` (String) Suffix appended to resources for Kustomize apps.
-- `patches` (Block List) (see [below for nested schema](#nestedblock--spec--generator--merge--generator--matrix--generator--cluster_decision_resource--template--spec--source--kustomize--patches))
+- `patches` (Block List) Patches is a list of Kustomize patches (see [below for nested schema](#nestedblock--spec--generator--merge--generator--matrix--generator--cluster_decision_resource--template--spec--source--kustomize--patches))
 - `version` (String) Version of Kustomize to use for rendering manifests.
 
 <a id="nestedblock--spec--generator--merge--generator--matrix--generator--cluster_decision_resource--template--spec--source--kustomize--patches"></a>
@@ -10043,15 +10246,22 @@ Required:
 
 Optional:
 
+- `options` (Map of Boolean)
 - `patch` (String)
+- `path` (String)
 
 <a id="nestedblock--spec--generator--merge--generator--matrix--generator--cluster_decision_resource--template--spec--source--kustomize--patches--target"></a>
 ### Nested Schema for `spec.generator.merge.generator.matrix.generator.cluster_decision_resource.template.spec.source.kustomize.patches.target`
 
 Optional:
 
+- `annotationSelector` (String)
+- `group` (String)
 - `kind` (String)
+- `labelSelector` (String)
 - `name` (String)
+- `namespace` (String)
+- `version` (String)
 
 
 
@@ -10321,7 +10531,7 @@ Optional:
 - `images` (Set of String) List of Kustomize image override specifications.
 - `name_prefix` (String) Prefix appended to resources for Kustomize apps.
 - `name_suffix` (String) Suffix appended to resources for Kustomize apps.
-- `patches` (Block List) (see [below for nested schema](#nestedblock--spec--generator--merge--generator--matrix--generator--clusters--template--spec--source--kustomize--patches))
+- `patches` (Block List) Patches is a list of Kustomize patches (see [below for nested schema](#nestedblock--spec--generator--merge--generator--matrix--generator--clusters--template--spec--source--kustomize--patches))
 - `version` (String) Version of Kustomize to use for rendering manifests.
 
 <a id="nestedblock--spec--generator--merge--generator--matrix--generator--clusters--template--spec--source--kustomize--patches"></a>
@@ -10333,15 +10543,22 @@ Required:
 
 Optional:
 
+- `options` (Map of Boolean)
 - `patch` (String)
+- `path` (String)
 
 <a id="nestedblock--spec--generator--merge--generator--matrix--generator--clusters--template--spec--source--kustomize--patches--target"></a>
 ### Nested Schema for `spec.generator.merge.generator.matrix.generator.clusters.template.spec.source.kustomize.patches.target`
 
 Optional:
 
+- `annotationSelector` (String)
+- `group` (String)
 - `kind` (String)
+- `labelSelector` (String)
 - `name` (String)
+- `namespace` (String)
+- `version` (String)
 
 
 
@@ -10617,7 +10834,7 @@ Optional:
 - `images` (Set of String) List of Kustomize image override specifications.
 - `name_prefix` (String) Prefix appended to resources for Kustomize apps.
 - `name_suffix` (String) Suffix appended to resources for Kustomize apps.
-- `patches` (Block List) (see [below for nested schema](#nestedblock--spec--generator--merge--generator--matrix--generator--git--template--spec--source--kustomize--patches))
+- `patches` (Block List) Patches is a list of Kustomize patches (see [below for nested schema](#nestedblock--spec--generator--merge--generator--matrix--generator--git--template--spec--source--kustomize--patches))
 - `version` (String) Version of Kustomize to use for rendering manifests.
 
 <a id="nestedblock--spec--generator--merge--generator--matrix--generator--git--template--spec--source--kustomize--patches"></a>
@@ -10629,15 +10846,22 @@ Required:
 
 Optional:
 
+- `options` (Map of Boolean)
 - `patch` (String)
+- `path` (String)
 
 <a id="nestedblock--spec--generator--merge--generator--matrix--generator--git--template--spec--source--kustomize--patches--target"></a>
 ### Nested Schema for `spec.generator.merge.generator.matrix.generator.git.template.spec.source.kustomize.patches.target`
 
 Optional:
 
+- `annotationSelector` (String)
+- `group` (String)
 - `kind` (String)
+- `labelSelector` (String)
 - `name` (String)
+- `namespace` (String)
+- `version` (String)
 
 
 
@@ -10889,7 +11113,7 @@ Optional:
 - `images` (Set of String) List of Kustomize image override specifications.
 - `name_prefix` (String) Prefix appended to resources for Kustomize apps.
 - `name_suffix` (String) Suffix appended to resources for Kustomize apps.
-- `patches` (Block List) (see [below for nested schema](#nestedblock--spec--generator--merge--generator--matrix--generator--list--template--spec--source--kustomize--patches))
+- `patches` (Block List) Patches is a list of Kustomize patches (see [below for nested schema](#nestedblock--spec--generator--merge--generator--matrix--generator--list--template--spec--source--kustomize--patches))
 - `version` (String) Version of Kustomize to use for rendering manifests.
 
 <a id="nestedblock--spec--generator--merge--generator--matrix--generator--list--template--spec--source--kustomize--patches"></a>
@@ -10901,15 +11125,22 @@ Required:
 
 Optional:
 
+- `options` (Map of Boolean)
 - `patch` (String)
+- `path` (String)
 
 <a id="nestedblock--spec--generator--merge--generator--matrix--generator--list--template--spec--source--kustomize--patches--target"></a>
 ### Nested Schema for `spec.generator.merge.generator.matrix.generator.list.template.spec.source.kustomize.patches.target`
 
 Optional:
 
+- `annotationSelector` (String)
+- `group` (String)
 - `kind` (String)
+- `labelSelector` (String)
 - `name` (String)
+- `namespace` (String)
+- `version` (String)
 
 
 
@@ -11276,7 +11507,7 @@ Optional:
 - `images` (Set of String) List of Kustomize image override specifications.
 - `name_prefix` (String) Prefix appended to resources for Kustomize apps.
 - `name_suffix` (String) Suffix appended to resources for Kustomize apps.
-- `patches` (Block List) (see [below for nested schema](#nestedblock--spec--generator--merge--generator--matrix--generator--pull_request--template--spec--source--kustomize--patches))
+- `patches` (Block List) Patches is a list of Kustomize patches (see [below for nested schema](#nestedblock--spec--generator--merge--generator--matrix--generator--pull_request--template--spec--source--kustomize--patches))
 - `version` (String) Version of Kustomize to use for rendering manifests.
 
 <a id="nestedblock--spec--generator--merge--generator--matrix--generator--pull_request--template--spec--source--kustomize--patches"></a>
@@ -11288,15 +11519,22 @@ Required:
 
 Optional:
 
+- `options` (Map of Boolean)
 - `patch` (String)
+- `path` (String)
 
 <a id="nestedblock--spec--generator--merge--generator--matrix--generator--pull_request--template--spec--source--kustomize--patches--target"></a>
 ### Nested Schema for `spec.generator.merge.generator.matrix.generator.pull_request.template.spec.source.kustomize.patches.target`
 
 Optional:
 
+- `annotationSelector` (String)
+- `group` (String)
 - `kind` (String)
+- `labelSelector` (String)
 - `name` (String)
+- `namespace` (String)
+- `version` (String)
 
 
 
@@ -11716,7 +11954,7 @@ Optional:
 - `images` (Set of String) List of Kustomize image override specifications.
 - `name_prefix` (String) Prefix appended to resources for Kustomize apps.
 - `name_suffix` (String) Suffix appended to resources for Kustomize apps.
-- `patches` (Block List) (see [below for nested schema](#nestedblock--spec--generator--merge--generator--matrix--generator--scm_provider--template--spec--source--kustomize--patches))
+- `patches` (Block List) Patches is a list of Kustomize patches (see [below for nested schema](#nestedblock--spec--generator--merge--generator--matrix--generator--scm_provider--template--spec--source--kustomize--patches))
 - `version` (String) Version of Kustomize to use for rendering manifests.
 
 <a id="nestedblock--spec--generator--merge--generator--matrix--generator--scm_provider--template--spec--source--kustomize--patches"></a>
@@ -11728,15 +11966,22 @@ Required:
 
 Optional:
 
+- `options` (Map of Boolean)
 - `patch` (String)
+- `path` (String)
 
 <a id="nestedblock--spec--generator--merge--generator--matrix--generator--scm_provider--template--spec--source--kustomize--patches--target"></a>
 ### Nested Schema for `spec.generator.merge.generator.matrix.generator.scm_provider.template.spec.source.kustomize.patches.target`
 
 Optional:
 
+- `annotationSelector` (String)
+- `group` (String)
 - `kind` (String)
+- `labelSelector` (String)
 - `name` (String)
+- `namespace` (String)
+- `version` (String)
 
 
 
@@ -11997,7 +12242,7 @@ Optional:
 - `images` (Set of String) List of Kustomize image override specifications.
 - `name_prefix` (String) Prefix appended to resources for Kustomize apps.
 - `name_suffix` (String) Suffix appended to resources for Kustomize apps.
-- `patches` (Block List) (see [below for nested schema](#nestedblock--spec--generator--merge--generator--matrix--template--spec--source--kustomize--patches))
+- `patches` (Block List) Patches is a list of Kustomize patches (see [below for nested schema](#nestedblock--spec--generator--merge--generator--matrix--template--spec--source--kustomize--patches))
 - `version` (String) Version of Kustomize to use for rendering manifests.
 
 <a id="nestedblock--spec--generator--merge--generator--matrix--template--spec--source--kustomize--patches"></a>
@@ -12009,15 +12254,22 @@ Required:
 
 Optional:
 
+- `options` (Map of Boolean)
 - `patch` (String)
+- `path` (String)
 
 <a id="nestedblock--spec--generator--merge--generator--matrix--template--spec--source--kustomize--patches--target"></a>
 ### Nested Schema for `spec.generator.merge.generator.matrix.template.spec.source.kustomize.patches.target`
 
 Optional:
 
+- `annotationSelector` (String)
+- `group` (String)
 - `kind` (String)
+- `labelSelector` (String)
 - `name` (String)
+- `namespace` (String)
+- `version` (String)
 
 
 
@@ -12317,7 +12569,7 @@ Optional:
 - `images` (Set of String) List of Kustomize image override specifications.
 - `name_prefix` (String) Prefix appended to resources for Kustomize apps.
 - `name_suffix` (String) Suffix appended to resources for Kustomize apps.
-- `patches` (Block List) (see [below for nested schema](#nestedblock--spec--generator--merge--generator--merge--generator--cluster_decision_resource--template--spec--source--kustomize--patches))
+- `patches` (Block List) Patches is a list of Kustomize patches (see [below for nested schema](#nestedblock--spec--generator--merge--generator--merge--generator--cluster_decision_resource--template--spec--source--kustomize--patches))
 - `version` (String) Version of Kustomize to use for rendering manifests.
 
 <a id="nestedblock--spec--generator--merge--generator--merge--generator--cluster_decision_resource--template--spec--source--kustomize--patches"></a>
@@ -12329,15 +12581,22 @@ Required:
 
 Optional:
 
+- `options` (Map of Boolean)
 - `patch` (String)
+- `path` (String)
 
 <a id="nestedblock--spec--generator--merge--generator--merge--generator--cluster_decision_resource--template--spec--source--kustomize--patches--target"></a>
 ### Nested Schema for `spec.generator.merge.generator.merge.generator.cluster_decision_resource.template.spec.source.kustomize.patches.target`
 
 Optional:
 
+- `annotationSelector` (String)
+- `group` (String)
 - `kind` (String)
+- `labelSelector` (String)
 - `name` (String)
+- `namespace` (String)
+- `version` (String)
 
 
 
@@ -12607,7 +12866,7 @@ Optional:
 - `images` (Set of String) List of Kustomize image override specifications.
 - `name_prefix` (String) Prefix appended to resources for Kustomize apps.
 - `name_suffix` (String) Suffix appended to resources for Kustomize apps.
-- `patches` (Block List) (see [below for nested schema](#nestedblock--spec--generator--merge--generator--merge--generator--clusters--template--spec--source--kustomize--patches))
+- `patches` (Block List) Patches is a list of Kustomize patches (see [below for nested schema](#nestedblock--spec--generator--merge--generator--merge--generator--clusters--template--spec--source--kustomize--patches))
 - `version` (String) Version of Kustomize to use for rendering manifests.
 
 <a id="nestedblock--spec--generator--merge--generator--merge--generator--clusters--template--spec--source--kustomize--patches"></a>
@@ -12619,15 +12878,22 @@ Required:
 
 Optional:
 
+- `options` (Map of Boolean)
 - `patch` (String)
+- `path` (String)
 
 <a id="nestedblock--spec--generator--merge--generator--merge--generator--clusters--template--spec--source--kustomize--patches--target"></a>
 ### Nested Schema for `spec.generator.merge.generator.merge.generator.clusters.template.spec.source.kustomize.patches.target`
 
 Optional:
 
+- `annotationSelector` (String)
+- `group` (String)
 - `kind` (String)
+- `labelSelector` (String)
 - `name` (String)
+- `namespace` (String)
+- `version` (String)
 
 
 
@@ -12903,7 +13169,7 @@ Optional:
 - `images` (Set of String) List of Kustomize image override specifications.
 - `name_prefix` (String) Prefix appended to resources for Kustomize apps.
 - `name_suffix` (String) Suffix appended to resources for Kustomize apps.
-- `patches` (Block List) (see [below for nested schema](#nestedblock--spec--generator--merge--generator--merge--generator--git--template--spec--source--kustomize--patches))
+- `patches` (Block List) Patches is a list of Kustomize patches (see [below for nested schema](#nestedblock--spec--generator--merge--generator--merge--generator--git--template--spec--source--kustomize--patches))
 - `version` (String) Version of Kustomize to use for rendering manifests.
 
 <a id="nestedblock--spec--generator--merge--generator--merge--generator--git--template--spec--source--kustomize--patches"></a>
@@ -12915,15 +13181,22 @@ Required:
 
 Optional:
 
+- `options` (Map of Boolean)
 - `patch` (String)
+- `path` (String)
 
 <a id="nestedblock--spec--generator--merge--generator--merge--generator--git--template--spec--source--kustomize--patches--target"></a>
 ### Nested Schema for `spec.generator.merge.generator.merge.generator.git.template.spec.source.kustomize.patches.target`
 
 Optional:
 
+- `annotationSelector` (String)
+- `group` (String)
 - `kind` (String)
+- `labelSelector` (String)
 - `name` (String)
+- `namespace` (String)
+- `version` (String)
 
 
 
@@ -13175,7 +13448,7 @@ Optional:
 - `images` (Set of String) List of Kustomize image override specifications.
 - `name_prefix` (String) Prefix appended to resources for Kustomize apps.
 - `name_suffix` (String) Suffix appended to resources for Kustomize apps.
-- `patches` (Block List) (see [below for nested schema](#nestedblock--spec--generator--merge--generator--merge--generator--list--template--spec--source--kustomize--patches))
+- `patches` (Block List) Patches is a list of Kustomize patches (see [below for nested schema](#nestedblock--spec--generator--merge--generator--merge--generator--list--template--spec--source--kustomize--patches))
 - `version` (String) Version of Kustomize to use for rendering manifests.
 
 <a id="nestedblock--spec--generator--merge--generator--merge--generator--list--template--spec--source--kustomize--patches"></a>
@@ -13187,15 +13460,22 @@ Required:
 
 Optional:
 
+- `options` (Map of Boolean)
 - `patch` (String)
+- `path` (String)
 
 <a id="nestedblock--spec--generator--merge--generator--merge--generator--list--template--spec--source--kustomize--patches--target"></a>
 ### Nested Schema for `spec.generator.merge.generator.merge.generator.list.template.spec.source.kustomize.patches.target`
 
 Optional:
 
+- `annotationSelector` (String)
+- `group` (String)
 - `kind` (String)
+- `labelSelector` (String)
 - `name` (String)
+- `namespace` (String)
+- `version` (String)
 
 
 
@@ -13562,7 +13842,7 @@ Optional:
 - `images` (Set of String) List of Kustomize image override specifications.
 - `name_prefix` (String) Prefix appended to resources for Kustomize apps.
 - `name_suffix` (String) Suffix appended to resources for Kustomize apps.
-- `patches` (Block List) (see [below for nested schema](#nestedblock--spec--generator--merge--generator--merge--generator--pull_request--template--spec--source--kustomize--patches))
+- `patches` (Block List) Patches is a list of Kustomize patches (see [below for nested schema](#nestedblock--spec--generator--merge--generator--merge--generator--pull_request--template--spec--source--kustomize--patches))
 - `version` (String) Version of Kustomize to use for rendering manifests.
 
 <a id="nestedblock--spec--generator--merge--generator--merge--generator--pull_request--template--spec--source--kustomize--patches"></a>
@@ -13574,15 +13854,22 @@ Required:
 
 Optional:
 
+- `options` (Map of Boolean)
 - `patch` (String)
+- `path` (String)
 
 <a id="nestedblock--spec--generator--merge--generator--merge--generator--pull_request--template--spec--source--kustomize--patches--target"></a>
 ### Nested Schema for `spec.generator.merge.generator.merge.generator.pull_request.template.spec.source.kustomize.patches.target`
 
 Optional:
 
+- `annotationSelector` (String)
+- `group` (String)
 - `kind` (String)
+- `labelSelector` (String)
 - `name` (String)
+- `namespace` (String)
+- `version` (String)
 
 
 
@@ -14002,7 +14289,7 @@ Optional:
 - `images` (Set of String) List of Kustomize image override specifications.
 - `name_prefix` (String) Prefix appended to resources for Kustomize apps.
 - `name_suffix` (String) Suffix appended to resources for Kustomize apps.
-- `patches` (Block List) (see [below for nested schema](#nestedblock--spec--generator--merge--generator--merge--generator--scm_provider--template--spec--source--kustomize--patches))
+- `patches` (Block List) Patches is a list of Kustomize patches (see [below for nested schema](#nestedblock--spec--generator--merge--generator--merge--generator--scm_provider--template--spec--source--kustomize--patches))
 - `version` (String) Version of Kustomize to use for rendering manifests.
 
 <a id="nestedblock--spec--generator--merge--generator--merge--generator--scm_provider--template--spec--source--kustomize--patches"></a>
@@ -14014,15 +14301,22 @@ Required:
 
 Optional:
 
+- `options` (Map of Boolean)
 - `patch` (String)
+- `path` (String)
 
 <a id="nestedblock--spec--generator--merge--generator--merge--generator--scm_provider--template--spec--source--kustomize--patches--target"></a>
 ### Nested Schema for `spec.generator.merge.generator.merge.generator.scm_provider.template.spec.source.kustomize.patches.target`
 
 Optional:
 
+- `annotationSelector` (String)
+- `group` (String)
 - `kind` (String)
+- `labelSelector` (String)
 - `name` (String)
+- `namespace` (String)
+- `version` (String)
 
 
 
@@ -14283,7 +14577,7 @@ Optional:
 - `images` (Set of String) List of Kustomize image override specifications.
 - `name_prefix` (String) Prefix appended to resources for Kustomize apps.
 - `name_suffix` (String) Suffix appended to resources for Kustomize apps.
-- `patches` (Block List) (see [below for nested schema](#nestedblock--spec--generator--merge--generator--merge--template--spec--source--kustomize--patches))
+- `patches` (Block List) Patches is a list of Kustomize patches (see [below for nested schema](#nestedblock--spec--generator--merge--generator--merge--template--spec--source--kustomize--patches))
 - `version` (String) Version of Kustomize to use for rendering manifests.
 
 <a id="nestedblock--spec--generator--merge--generator--merge--template--spec--source--kustomize--patches"></a>
@@ -14295,15 +14589,22 @@ Required:
 
 Optional:
 
+- `options` (Map of Boolean)
 - `patch` (String)
+- `path` (String)
 
 <a id="nestedblock--spec--generator--merge--generator--merge--template--spec--source--kustomize--patches--target"></a>
 ### Nested Schema for `spec.generator.merge.generator.merge.template.spec.source.kustomize.patches.target`
 
 Optional:
 
+- `annotationSelector` (String)
+- `group` (String)
 - `kind` (String)
+- `labelSelector` (String)
 - `name` (String)
+- `namespace` (String)
+- `version` (String)
 
 
 
@@ -14670,7 +14971,7 @@ Optional:
 - `images` (Set of String) List of Kustomize image override specifications.
 - `name_prefix` (String) Prefix appended to resources for Kustomize apps.
 - `name_suffix` (String) Suffix appended to resources for Kustomize apps.
-- `patches` (Block List) (see [below for nested schema](#nestedblock--spec--generator--merge--generator--pull_request--template--spec--source--kustomize--patches))
+- `patches` (Block List) Patches is a list of Kustomize patches (see [below for nested schema](#nestedblock--spec--generator--merge--generator--pull_request--template--spec--source--kustomize--patches))
 - `version` (String) Version of Kustomize to use for rendering manifests.
 
 <a id="nestedblock--spec--generator--merge--generator--pull_request--template--spec--source--kustomize--patches"></a>
@@ -14682,15 +14983,22 @@ Required:
 
 Optional:
 
+- `options` (Map of Boolean)
 - `patch` (String)
+- `path` (String)
 
 <a id="nestedblock--spec--generator--merge--generator--pull_request--template--spec--source--kustomize--patches--target"></a>
 ### Nested Schema for `spec.generator.merge.generator.pull_request.template.spec.source.kustomize.patches.target`
 
 Optional:
 
+- `annotationSelector` (String)
+- `group` (String)
 - `kind` (String)
+- `labelSelector` (String)
 - `name` (String)
+- `namespace` (String)
+- `version` (String)
 
 
 
@@ -15110,7 +15418,7 @@ Optional:
 - `images` (Set of String) List of Kustomize image override specifications.
 - `name_prefix` (String) Prefix appended to resources for Kustomize apps.
 - `name_suffix` (String) Suffix appended to resources for Kustomize apps.
-- `patches` (Block List) (see [below for nested schema](#nestedblock--spec--generator--merge--generator--scm_provider--template--spec--source--kustomize--patches))
+- `patches` (Block List) Patches is a list of Kustomize patches (see [below for nested schema](#nestedblock--spec--generator--merge--generator--scm_provider--template--spec--source--kustomize--patches))
 - `version` (String) Version of Kustomize to use for rendering manifests.
 
 <a id="nestedblock--spec--generator--merge--generator--scm_provider--template--spec--source--kustomize--patches"></a>
@@ -15122,15 +15430,22 @@ Required:
 
 Optional:
 
+- `options` (Map of Boolean)
 - `patch` (String)
+- `path` (String)
 
 <a id="nestedblock--spec--generator--merge--generator--scm_provider--template--spec--source--kustomize--patches--target"></a>
 ### Nested Schema for `spec.generator.merge.generator.scm_provider.template.spec.source.kustomize.patches.target`
 
 Optional:
 
+- `annotationSelector` (String)
+- `group` (String)
 - `kind` (String)
+- `labelSelector` (String)
 - `name` (String)
+- `namespace` (String)
+- `version` (String)
 
 
 
@@ -15391,7 +15706,7 @@ Optional:
 - `images` (Set of String) List of Kustomize image override specifications.
 - `name_prefix` (String) Prefix appended to resources for Kustomize apps.
 - `name_suffix` (String) Suffix appended to resources for Kustomize apps.
-- `patches` (Block List) (see [below for nested schema](#nestedblock--spec--generator--merge--template--spec--source--kustomize--patches))
+- `patches` (Block List) Patches is a list of Kustomize patches (see [below for nested schema](#nestedblock--spec--generator--merge--template--spec--source--kustomize--patches))
 - `version` (String) Version of Kustomize to use for rendering manifests.
 
 <a id="nestedblock--spec--generator--merge--template--spec--source--kustomize--patches"></a>
@@ -15403,15 +15718,22 @@ Required:
 
 Optional:
 
+- `options` (Map of Boolean)
 - `patch` (String)
+- `path` (String)
 
 <a id="nestedblock--spec--generator--merge--template--spec--source--kustomize--patches--target"></a>
 ### Nested Schema for `spec.generator.merge.template.spec.source.kustomize.patches.target`
 
 Optional:
 
+- `annotationSelector` (String)
+- `group` (String)
 - `kind` (String)
+- `labelSelector` (String)
 - `name` (String)
+- `namespace` (String)
+- `version` (String)
 
 
 
@@ -15778,7 +16100,7 @@ Optional:
 - `images` (Set of String) List of Kustomize image override specifications.
 - `name_prefix` (String) Prefix appended to resources for Kustomize apps.
 - `name_suffix` (String) Suffix appended to resources for Kustomize apps.
-- `patches` (Block List) (see [below for nested schema](#nestedblock--spec--generator--pull_request--template--spec--source--kustomize--patches))
+- `patches` (Block List) Patches is a list of Kustomize patches (see [below for nested schema](#nestedblock--spec--generator--pull_request--template--spec--source--kustomize--patches))
 - `version` (String) Version of Kustomize to use for rendering manifests.
 
 <a id="nestedblock--spec--generator--pull_request--template--spec--source--kustomize--patches"></a>
@@ -15790,15 +16112,22 @@ Required:
 
 Optional:
 
+- `options` (Map of Boolean)
 - `patch` (String)
+- `path` (String)
 
 <a id="nestedblock--spec--generator--pull_request--template--spec--source--kustomize--patches--target"></a>
 ### Nested Schema for `spec.generator.pull_request.template.spec.source.kustomize.patches.target`
 
 Optional:
 
+- `annotationSelector` (String)
+- `group` (String)
 - `kind` (String)
+- `labelSelector` (String)
 - `name` (String)
+- `namespace` (String)
+- `version` (String)
 
 
 
@@ -16218,7 +16547,7 @@ Optional:
 - `images` (Set of String) List of Kustomize image override specifications.
 - `name_prefix` (String) Prefix appended to resources for Kustomize apps.
 - `name_suffix` (String) Suffix appended to resources for Kustomize apps.
-- `patches` (Block List) (see [below for nested schema](#nestedblock--spec--generator--scm_provider--template--spec--source--kustomize--patches))
+- `patches` (Block List) Patches is a list of Kustomize patches (see [below for nested schema](#nestedblock--spec--generator--scm_provider--template--spec--source--kustomize--patches))
 - `version` (String) Version of Kustomize to use for rendering manifests.
 
 <a id="nestedblock--spec--generator--scm_provider--template--spec--source--kustomize--patches"></a>
@@ -16230,15 +16559,22 @@ Required:
 
 Optional:
 
+- `options` (Map of Boolean)
 - `patch` (String)
+- `path` (String)
 
 <a id="nestedblock--spec--generator--scm_provider--template--spec--source--kustomize--patches--target"></a>
 ### Nested Schema for `spec.generator.scm_provider.template.spec.source.kustomize.patches.target`
 
 Optional:
 
+- `annotationSelector` (String)
+- `group` (String)
 - `kind` (String)
+- `labelSelector` (String)
 - `name` (String)
+- `namespace` (String)
+- `version` (String)
 
 
 
@@ -16486,7 +16822,7 @@ Optional:
 - `images` (Set of String) List of Kustomize image override specifications.
 - `name_prefix` (String) Prefix appended to resources for Kustomize apps.
 - `name_suffix` (String) Suffix appended to resources for Kustomize apps.
-- `patches` (Block List) (see [below for nested schema](#nestedblock--spec--template--spec--source--kustomize--patches))
+- `patches` (Block List) Patches is a list of Kustomize patches (see [below for nested schema](#nestedblock--spec--template--spec--source--kustomize--patches))
 - `version` (String) Version of Kustomize to use for rendering manifests.
 
 <a id="nestedblock--spec--template--spec--source--kustomize--patches"></a>
@@ -16498,15 +16834,22 @@ Required:
 
 Optional:
 
+- `options` (Map of Boolean)
 - `patch` (String)
+- `path` (String)
 
 <a id="nestedblock--spec--template--spec--source--kustomize--patches--target"></a>
 ### Nested Schema for `spec.template.spec.source.kustomize.patches.target`
 
 Optional:
 
+- `annotationSelector` (String)
+- `group` (String)
 - `kind` (String)
+- `labelSelector` (String)
 - `name` (String)
+- `namespace` (String)
+- `version` (String)
 
 
 

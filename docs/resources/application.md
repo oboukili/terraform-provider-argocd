@@ -338,26 +338,26 @@ Optional:
 
 Required:
 
-- `target` (Block Set, Min: 1) (see [below for nested schema](#nestedblock--spec--source--kustomize--patches--target))
+- `target` (Block Set, Min: 1) Targets to Patch (see [below for nested schema](#nestedblock--spec--source--kustomize--patches--target))
 
 Optional:
 
-- `options` (Map of Boolean)
-- `patch` (String)
-- `path` (String)
+- `options` (Map of Boolean) options
+- `patch` (String) patch
+- `path` (String) path
 
 <a id="nestedblock--spec--source--kustomize--patches--target"></a>
 ### Nested Schema for `spec.source.kustomize.patches.target`
 
 Optional:
 
-- `annotationSelector` (String)
-- `group` (String)
-- `kind` (String)
-- `labelSelector` (String)
-- `name` (String)
-- `namespace` (String)
-- `version` (String)
+- `annotation_selector` (String) Annotation Selectors
+- `group` (String) group
+- `kind` (String) kind
+- `label_selector` (String) Label Selectors
+- `name` (String) name
+- `namespace` (String) namespace
+- `version` (String) version
 
 
 

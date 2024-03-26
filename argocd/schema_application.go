@@ -1443,55 +1443,66 @@ func applicationSpecSchemaV4(allOptional bool) *schema.Schema {
 											Elem: &schema.Resource{
 												Schema: map[string]*schema.Schema{
 													"target": {
-														Type:     schema.TypeSet,
-														Required: true,
+														Type:        schema.TypeSet,
+														Description: "Targets to Patch",
+														Required:    true,
 														Elem: &schema.Resource{
 															Schema: map[string]*schema.Schema{
 																"kind": {
-																	Type:     schema.TypeString,
-																	Optional: true,
+																	Type:        schema.TypeString,
+																	Description: "kind",
+																	Optional:    true,
 																},
 																"name": {
-																	Type:     schema.TypeString,
-																	Optional: true,
+																	Type:        schema.TypeString,
+																	Description: "name",
+																	Optional:    true,
 																},
-																"labelSelector": {
-																	Type:     schema.TypeString,
-																	Optional: true,
+																"label_selector": {
+																	Type:        schema.TypeString,
+																	Description: "Label Selectors",
+																	Optional:    true,
 																},
-																"annotationSelector": {
-																	Type:     schema.TypeString,
-																	Optional: true,
+																"annotation_selector": {
+																	Type:        schema.TypeString,
+																	Description: "Annotation Selectors",
+																	Optional:    true,
 																},
 																"group": {
-																	Type:     schema.TypeString,
-																	Optional: true,
+																	Type:        schema.TypeString,
+																	Description: "group",
+																	Optional:    true,
 																},
 																"namespace": {
-																	Type:     schema.TypeString,
-																	Optional: true,
+																	Type:        schema.TypeString,
+																	Description: "namespace",
+																	Optional:    true,
 																},
 																"version": {
-																	Type:     schema.TypeString,
-																	Optional: true,
+																	Type:        schema.TypeString,
+																	Description: "version",
+																	Optional:    true,
 																},
 															},
 														},
 													},
 													"patch": {
-														Type:     schema.TypeString,
-														Optional: true,
-														Elem:     &schema.Schema{Type: schema.TypeString},
+														Type:        schema.TypeString,
+														Description: "patch",
+														Optional:    true,
+														Elem:        &schema.Schema{Type: schema.TypeString},
 													},
 													"path": {
-														Type:     schema.TypeString,
-														Optional: true,
-														Elem:     &schema.Schema{Type: schema.TypeString},
+														Type:        schema.TypeString,
+														Description: "path",
+														Optional:    true,
+														Elem:        &schema.Schema{Type: schema.TypeString},
 													},
 													"options": {
-														Type:     schema.TypeMap,
-														Optional: true,
-														Elem:     &schema.Schema{Type: schema.TypeBool},
+														Type:        schema.TypeMap,
+														Description: "options",
+														Optional:    true,
+														Elem:        &schema.Schema{Type: schema.TypeBool},
 													},
 												},
 											},

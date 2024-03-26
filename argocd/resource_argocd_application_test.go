@@ -1256,10 +1256,10 @@ resource "argocd_application" "kustomize" {
 					}
 
 					patch = <<-EOT
-						- op: replace
-						path: /spec/template/spec/containers/0/name
-						value: the-container-1
-						EOT
+- op: replace
+  path: /spec/template/spec/containers/0/name
+  value: the-container-1
+EOT
 				}
 			}
 		}

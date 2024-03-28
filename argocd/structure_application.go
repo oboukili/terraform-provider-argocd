@@ -806,21 +806,21 @@ func flattenApplicationSourceKustomize(as []*application.ApplicationSourceKustom
 				target := make(map[string]interface{})
 				if p.Target != nil {
 					target = map[string]interface{}{
-						"group":              p.Target.KustomizeResId.KustomizeGvk.Group,
-						"version":            p.Target.KustomizeResId.KustomizeGvk.Version,
-						"kind":               p.Target.KustomizeResId.KustomizeGvk.Kind,
-						"name":               p.Target.KustomizeResId.Name,
-						"namespace":          p.Target.KustomizeResId.Namespace,
+						"group":               p.Target.KustomizeResId.KustomizeGvk.Group,
+						"version":             p.Target.KustomizeResId.KustomizeGvk.Version,
+						"kind":                p.Target.KustomizeResId.KustomizeGvk.Kind,
+						"name":                p.Target.KustomizeResId.Name,
+						"namespace":           p.Target.KustomizeResId.Namespace,
 						"label_selector":      p.Target.LabelSelector,
 						"annotation_selector": p.Target.AnnotationSelector,
 					}
 				}
 
 				patches = append(patches, map[string]interface{}{
-					"patch":  p.Patch,
-					"path": p.Path,
+					"patch":   p.Patch,
+					"path":    p.Path,
 					"options": p.Options,
-					"target": []map[string]interface{}{target},
+					"target":  []map[string]interface{}{target},
 				})
 			}
 

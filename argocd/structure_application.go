@@ -253,12 +253,32 @@ func expandApplicationSourceKustomize(in []interface{}) *application.Application
 						},
 					}
 
+					if group, ok := targetMap["group"]; ok {
+						kustomizeSelector.KustomizeResId.KustomizeGvk.Group = group.(string)
+					}
+
+					if version, ok := targetMap["version"]; ok {
+						kustomizeSelector.KustomizeResId.KustomizeGvk.Version = version.(string)
+					}
+
 					if kind, ok := targetMap["kind"]; ok {
 						kustomizeSelector.KustomizeResId.KustomizeGvk.Kind = kind.(string)
 					}
 
 					if name, ok := targetMap["name"]; ok {
 						kustomizeSelector.KustomizeResId.Name = name.(string)
+					}
+
+					if namespace, ok := targetMap["namespace"]; ok {
+						kustomizeSelector.KustomizeResId.Namespace = namespace.(string)
+					}
+
+					if label_selector, ok := targetMap["label_selector"]; ok {
+						kustomizeSelector.LabelSelector = label_selector.(string)
+					}
+
+					if annotation_selector, ok := targetMap["annotation_selector"]; ok {
+						kustomizeSelector.AnnotationSelector = annotation_selector.(string)
 					}
 
 					kustomizePatch.Target = &kustomizeSelector
@@ -786,13 +806,20 @@ func flattenApplicationSourceKustomize(as []*application.ApplicationSourceKustom
 				target := make(map[string]interface{})
 				if p.Target != nil {
 					target = map[string]interface{}{
-						"kind": p.Target.KustomizeResId.KustomizeGvk.Kind,
-						"name": p.Target.KustomizeResId.Name,
+						"group":              p.Target.KustomizeResId.KustomizeGvk.Group,
+						"version":            p.Target.KustomizeResId.KustomizeGvk.Version,
+						"kind":               p.Target.KustomizeResId.KustomizeGvk.Kind,
+						"name":               p.Target.KustomizeResId.Name,
+						"namespace":          p.Target.KustomizeResId.Namespace,
+						"label_selector":      p.Target.LabelSelector,
+						"annotation_selector": p.Target.AnnotationSelector,
 					}
 				}
 
 				patches = append(patches, map[string]interface{}{
 					"patch":  p.Patch,
+					"path": p.Path,
+					"options": p.Options,
 					"target": []map[string]interface{}{target},
 				})
 			}
